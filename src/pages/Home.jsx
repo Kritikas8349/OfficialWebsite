@@ -14,7 +14,7 @@ import indices from "../assets/indices.jpg";
 import digitalCurrency from "../assets/digitalCurrency.jpg";
 import etf from "../assets/etf.jpg";
 
-import BuyandSell from "../assets/BuyandSell.webp";
+import BuyAndSell from "../assets/BuyAndSell.webp";
 
 import ourService1 from "../assets/ourService1.png";
 import ourService2 from "../assets/ourService2.png";
@@ -424,7 +424,7 @@ useEffect(() => {
 
           {/* LEFT IMAGE */}
           <div className={`dna-image ${dnaVisible ? "show-left" : ""}`}>
-            <img src={BuyandSell} alt="Trading DNA" />
+            <img src={BuyAndSell} alt="Trading DNA" />
           </div>
 
           {/* RIGHT CONTENT */}
