@@ -25,8 +25,8 @@ const Navbar = () => {
       <div className="logo">CAPEX 1.0</div>
 
       <ul className="nav-center">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
         <li><a href="#">Research</a></li>
         <li><a href="#">Free Forex Signal</a></li>
         <li><a href="#">Insights</a></li>
