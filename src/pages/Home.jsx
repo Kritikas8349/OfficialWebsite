@@ -153,7 +153,39 @@ const Home = () => {
 
   //DNA 
   const tradeRef = useRef(null);
+  // const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true); // 🔥 trigger animation
+        }
+      },
+      {
+        threshold: 0.3, // 🔥 30% visible pe trigger
+      }
+    );
+
+    if (tradeRef.current) {
+      observer.observe(tradeRef.current);
+    }
+
+    return () => {
+      if (tradeRef.current) {
+        observer.unobserve(tradeRef.current);
+      }
+    };
+  }, []);
+
+  //FAQs
+  const [activeIndex, setActiveIndex] = useState(2); // default open
   const [isVisible, setIsVisible] = useState(false);
+  const faqRef = useRef(null);
+
+  const toggleFAQ = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -162,13 +194,41 @@ const Home = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
-    if (tradeRef.current) observer.observe(tradeRef.current);
+    if (faqRef.current) observer.observe(faqRef.current);
 
     return () => observer.disconnect();
   }, []);
+
+  const faqs = [
+    {
+      question: "How do I start learning to trade if I have zero knowledge?",
+      answer: "Start with basics like market structure, risk management, and practice with demo accounts."
+    },
+    {
+      question: "Where can i find daily forex market analysis ?",
+      answer: "You can follow trusted platforms, blogs, and financial news portals."
+    },
+    {
+      question: "What financial markets do you cover in your daily analysis?",
+      answer:
+        "We cover forex pairs, cryptocurrencies, stock indices, commodities like gold & oil, and major economic events."
+    },
+    {
+      question: "Do you provide trading signals or just education?",
+      answer: "We focus on education and analysis to help you make your own decisions."
+    },
+    {
+      question: "Is risk management really that important for a beginner?",
+      answer: "Yes, it is the most important part of trading."
+    },
+    {
+      question: "Who manages investments here?",
+      answer: "We provide tools & insights — you manage your own trades."
+    }
+  ];
 
   return (
 
@@ -494,7 +554,49 @@ const Home = () => {
 
         {/* RIGHT IMAGE */}
         <div className={`trade-right ${isVisible ? "animate-right" : ""}`}>
-          <img src={markettrade} alt="Trading Visual" />
+        <img src={markettrade} alt="Trading Visual" />
+        </div>
+
+      </div>
+    </section>
+
+    <section className="faq-section" ref={faqRef}>
+      <div className="faq-container">
+
+        {/* LEFT */}
+        <div className={`faq-left ${isVisible ? "fade-left" : ""}`}>
+          <span className="faq-tag">FAQ</span>
+
+          <h2>
+            Common Investment <br />
+            <span>Guide</span>
+          </h2>
+
+          <p>
+            Stay ahead of the markets with expert insights on forex, inflation trends,
+            central bank policy, commodities, and digital assets delivering actionable
+            intelligence for informed investing.
+          </p>
+        </div>
+
+        {/* RIGHT */}
+        <div className={`faq-right ${isVisible ? "fade-right" : ""}`}>
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className={`faq-item ${activeIndex === index ? "active" : ""}`}
+              onClick={() => toggleFAQ(index)}
+            >
+              <div className="faq-question">
+                {faq.question}
+                <span>{activeIndex === index ? "−" : "+"}</span>
+              </div>
+
+              <div className="faq-answer">
+                {faq.answer}
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>
