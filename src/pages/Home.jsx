@@ -153,54 +153,45 @@ const Home = () => {
 
   //DNA 
   const tradeRef = useRef(null);
-  // const [isVisible, setIsVisible] = useState(false);
+const [tradeVisible, setTradeVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true); // 🔥 trigger animation
-        }
-      },
-      {
-        threshold: 0.3, // 🔥 30% visible pe trigger
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setTradeVisible(true);
       }
-    );
+    },
+    { threshold: 0.3 }
+  );
 
-    if (tradeRef.current) {
-      observer.observe(tradeRef.current);
-    }
+  if (tradeRef.current) observer.observe(tradeRef.current);
 
-    return () => {
-      if (tradeRef.current) {
-        observer.unobserve(tradeRef.current);
-      }
-    };
-  }, []);
+  return () => observer.disconnect();
+}, []);
 
   //FAQs
-  const [activeIndex, setActiveIndex] = useState(2); // default open
-  const [isVisible, setIsVisible] = useState(false);
-  const faqRef = useRef(null);
-
+  const [activeIndex, setActiveIndex] = useState(2);
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+  const [faqVisible, setFaqVisible] = useState(false);
+const faqRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setFaqVisible(true);
+      }
+    },
+    { threshold: 0.2 }
+  );
 
-    if (faqRef.current) observer.observe(faqRef.current);
+  if (faqRef.current) observer.observe(faqRef.current);
 
-    return () => observer.disconnect();
-  }, []);
+  return () => observer.disconnect();
+}, []);
 
   const faqs = [
     {
@@ -541,7 +532,7 @@ const Home = () => {
       <div className="trade-box">
 
         {/* LEFT CONTENT */}
-        <div className={`trade-left ${isVisible ? "animate-left" : ""}`}>
+        <div className={`trade-left ${tradeVisible ? "animate-left" : ""}`}>
           <h2>Transforming Trading since 2005</h2>
 
           <p>
@@ -553,7 +544,7 @@ const Home = () => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className={`trade-right ${isVisible ? "animate-right" : ""}`}>
+        <div className={`trade-right ${tradeVisible ? "animate-right" : ""}`}>
         <img src={markettrade} alt="Trading Visual" />
         </div>
 
@@ -564,7 +555,7 @@ const Home = () => {
       <div className="faq-container">
 
         {/* LEFT */}
-        <div className={`faq-left ${isVisible ? "fade-left" : ""}`}>
+        <div className={`faq-left ${faqVisible ? "fade-left" : ""}`}>
           <span className="faq-tag">FAQ</span>
 
           <h2>
@@ -580,7 +571,7 @@ const Home = () => {
         </div>
 
         {/* RIGHT */}
-        <div className={`faq-right ${isVisible ? "fade-right" : ""}`}>
+        <div className={`faq-right ${faqVisible ? "fade-right" : ""}`}>
           {faqs.map((faq, index) => (
             <div
               key={index}
