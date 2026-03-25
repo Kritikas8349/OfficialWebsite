@@ -25,7 +25,21 @@
   /* 🔥 SCROLLED STATE */
   .navbar.scrolled {
     width: 100%;
-    background-color: #090d46;
+    background: radial-gradient(
+  circle at 70% 50%,
+  #1e5ed8 0%,
+  #0c3c9e 25%,
+  #072a73 50%,
+  #031a4d 75%,
+  #010f2e 100%
+),
+linear-gradient(
+  to right,
+  #010f2e 0%,
+  #031a4d 40%,
+  #072a73 70%,
+  #0c3c9e 100%
+);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     transition: background .2s ease;
