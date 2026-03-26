@@ -22,13 +22,14 @@ import ourService2 from "../assets/ourService2.png";
 import markettrade from "../assets/markettrade.webp";
 
 
+/* ================= IMAGES ================= */
 const images = [img1, img2];
 
 const Home = () => {
+  /* ================= HERO ================= */
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animateText, setAnimateText] = useState(false);
 
-  // ✅ SLOW IMAGE SLIDER (10 sec)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -37,50 +38,37 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // ✅ TEXT ANIMATION ONLY ONCE
   useEffect(() => {
     setAnimateText(true);
   }, []);
 
-
-  //Services
-
+  /* ================= SERVICES ================= */
   const serviceRef = useRef(null);
   const [serviceVisible, setServiceVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setServiceVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setServiceVisible(true);
+    });
 
-    if (serviceRef.current) {
-      observer.observe(serviceRef.current);
-    }
-
+    if (serviceRef.current) observer.observe(serviceRef.current);
     return () => observer.disconnect();
   }, []);
 
-
+  /* ================= SCROLL ================= */
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
-    const { current } = scrollRef;
-    const scrollAmount = 300;
+    const scrollAmount = 200;
 
     if (direction === "left") {
-      current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
-      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
-
-  //---------About
+  /* ================= ABOUT ================= */
   const aboutRef = useRef(null);
   const [aboutVisible, setAboutVisible] = useState(false);
 
@@ -89,19 +77,19 @@ const Home = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setAboutVisible(true);
-          observer.unobserve(entry.target);
+          observer.unobserve(entry.target); // run only once
         }
       },
-      { threshold: 0.3 }
+      {
+        threshold: 0.3, // 
+      }
     );
 
     if (aboutRef.current) observer.observe(aboutRef.current);
 
     return () => observer.disconnect();
   }, []);
-
-
-  //------Buy and Sell
+  /* ================= DNA ================= */
   const dnaRef = useRef(null);
   const [dnaVisible, setDnaVisible] = useState(false);
 
@@ -110,20 +98,21 @@ const Home = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setDnaVisible(true);
+          observer.unobserve(entry.target); // 👈 run only once
         }
       },
-      { threshold: 0.3 }
+      {
+        threshold: 0.3, // 👈 jab 40% section visible hoga tab chalega
+        rootMargin: "0px 0px -50px 0px", // 👈 thoda smooth early trigger
+      }
     );
 
-    if (dnaRef.current) {
-      observer.observe(dnaRef.current);
-    }
+    if (dnaRef.current) observer.observe(dnaRef.current);
 
     return () => observer.disconnect();
   }, []);
 
-
-  // Our Service
+  /* ================= WHY ================= */
   const whyRef = useRef(null);
   const [whyVisible, setWhyVisible] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -134,15 +123,18 @@ const Home = () => {
         if (entry.isIntersecting) {
           setWhyVisible(true);
 
+          // 👇 delay after section visible
           setTimeout(() => {
             setProgress(94);
           }, 1200);
 
-          // ✅ STOP OBSERVING after first trigger
-          observer.unobserve(entry.target);
+          observer.unobserve(entry.target); // run once
         }
       },
-      { threshold: 0.3 } // slightly higher = better UX
+      {
+        threshold: 0.20, // 👈 important
+        rootMargin: "0px 0px -50px 0px",
+      }
     );
 
     if (whyRef.current) observer.observe(whyRef.current);
@@ -150,76 +142,84 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-
-  //DNA 
+  /* ================= TRADE ================= */
   const tradeRef = useRef(null);
-const [tradeVisible, setTradeVisible] = useState(false);
+  const [tradeVisible, setTradeVisible] = useState(false);
 
   useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        setTradeVisible(true);
-      }
-    },
-    { threshold: 0.3 }
-  );
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setTradeVisible(true);
+    });
 
-  if (tradeRef.current) observer.observe(tradeRef.current);
+    if (tradeRef.current) observer.observe(tradeRef.current);
+    return () => observer.disconnect();
+  }, []);
 
-  return () => observer.disconnect();
-}, []);
-
-  //FAQs
+  /* ================= FAQ ================= */
+  const faqRef = useRef(null);
+  const [faqVisible, setFaqVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(2);
+
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-  const [faqVisible, setFaqVisible] = useState(false);
-const faqRef = useRef(null);
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        setFaqVisible(true);
-      }
-    },
-    { threshold: 0.2 }
-  );
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setFaqVisible(true);
+    });
 
-  if (faqRef.current) observer.observe(faqRef.current);
-
-  return () => observer.disconnect();
-}, []);
+    if (faqRef.current) observer.observe(faqRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const faqs = [
     {
       question: "How do I start learning to trade if I have zero knowledge?",
-      answer: "Start with basics like market structure, risk management, and practice with demo accounts."
+      answer: "Start with basics like market structure, risk management, and demo accounts.",
     },
     {
-      question: "Where can i find daily forex market analysis ?",
-      answer: "You can follow trusted platforms, blogs, and financial news portals."
+      question: "Where can I find daily forex market analysis?",
+      answer: "Follow trusted platforms, blogs, and financial news portals.",
     },
     {
-      question: "What financial markets do you cover in your daily analysis?",
-      answer:
-        "We cover forex pairs, cryptocurrencies, stock indices, commodities like gold & oil, and major economic events."
+      question: "What markets do you cover?",
+      answer: "Forex, crypto, indices, commodities, and economic events.",
     },
     {
-      question: "Do you provide trading signals or just education?",
-      answer: "We focus on education and analysis to help you make your own decisions."
+      question: "Do you provide signals?",
+      answer: "We focus on education and analysis.",
     },
     {
-      question: "Is risk management really that important for a beginner?",
-      answer: "Yes, it is the most important part of trading."
+      question: "Is risk management important?",
+      answer: "It is the MOST important part.",
     },
     {
-      question: "Who manages investments here?",
-      answer: "We provide tools & insights — you manage your own trades."
-    }
+      question: "Who manages investments?",
+      answer: "You manage your trades — we provide tools.",
+    },
   ];
+
+
+  //Learn
+  const learnRef = useRef(null);
+  const [learnVisible, setLearnVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLearnVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (learnRef.current) observer.observe(learnRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
 
   return (
 
@@ -233,7 +233,13 @@ useEffect(() => {
         >
           {images.map((img, index) => (
             <div className="slide" key={index}>
+
+              {/* IMAGE */}
               <img src={img} alt="Trading Background" />
+
+              {/* 🔥 GRADIENT ONLY ON SECOND IMAGE */}
+              {index === 1 && <div className="gradient-overlay"></div>}
+
             </div>
           ))}
         </div>
@@ -275,12 +281,12 @@ useEffect(() => {
         id="about"
         ref={aboutRef}
       >
-        {/* Left - Single Image Frame */}
+        {/* LEFT IMAGE */}
         <div className={`about-image-frame ${aboutVisible ? "show-left" : ""}`}>
           <img src={about} alt="About Us" />
         </div>
 
-        {/* Right Content */}
+        {/* RIGHT CONTENT */}
         <div className={`about-content ${aboutVisible ? "show-right" : ""}`}>
           <p className="about-tag">ABOUT US</p>
 
@@ -308,29 +314,27 @@ useEffect(() => {
             <li>✔ Expertise in stocks, forex, crypto, and commodities</li>
             <li>✔ High emphasis on data privacy and security</li>
           </ul>
-
         </div>
       </section>
 
+      <section className="learn-section" ref={learnRef}>
+        <div className="learn-bg"></div>
+        <div className="learn-overlay"></div>
 
-      <section className="learn-section">
-  <div className="learn-bg"></div>
-  <div className="learn-overlay"></div>
+        <div className={`learn-content ${learnVisible ? "show" : ""}`}>
+          <h2>
+            Learn and trade what you <br />
+            want. When you want.
+          </h2>
 
-  <div className="learn-content">
-    <h2>
-      Learn and trade what you <br />
-      want. When you want.
-    </h2>
+          <p>
+            Improve your strategy and become a more confident trader with expert
+            market analysis, advanced trading tools and comprehensive educational materials.
+          </p>
 
-    <p>
-      Improve your strategy and become a more confident trader with expert
-      market analysis, advanced trading tools and comprehensive educational materials.
-    </p>
-
-    <button className="learn-btn">START TRADING</button>
-  </div>
-</section>
+          <button className="learn-btn">START TRADING</button>
+        </div>
+      </section>
 
 
 
@@ -419,7 +423,10 @@ useEffect(() => {
       </section>
 
 
-      <section className="dna-section" ref={dnaRef}>
+      <section
+        className={`dna-section ${dnaVisible ? "show-dna" : ""}`}
+        ref={dnaRef}
+      >
         <div className="dna-container">
 
           {/* LEFT IMAGE */}
@@ -429,7 +436,7 @@ useEffect(() => {
 
           {/* RIGHT CONTENT */}
           <div className={`dna-content ${dnaVisible ? "show-right" : ""}`}>
-            <h2>Trade technology is in our DNA</h2>
+            <h2>Precision at the core of every trade</h2>
 
             <ul>
               <li>20+ years of trading experience</li>
@@ -444,7 +451,10 @@ useEffect(() => {
       </section>
 
 
-      <section className="why-section" ref={whyRef}>
+      <section
+        className={`why-section ${whyVisible ? "show-why" : ""}`}
+        ref={whyRef}
+      >
         <div className="why-header">
           <div className="tag">WHY CHOOSE US</div>
           <h2>
@@ -452,9 +462,7 @@ useEffect(() => {
           </h2>
 
           <p>
-            We focus on delivering clear, practical trading knowledge backed by real
-            market behavior. Our goal is to help traders build confidence, understand
-            price movement, and make smarter decisions without confusion or noise.
+            We deliver practical trading knowledge based on real market behavior, helping traders gain confidence and make smarter decisions.
           </p>
         </div>
 
@@ -529,69 +537,163 @@ useEffect(() => {
 
 
       <section className="trade-sec" ref={tradeRef}>
-      <div className="trade-box">
+        <div className="trade-box">
 
-        {/* LEFT CONTENT */}
-        <div className={`trade-left ${tradeVisible ? "animate-left" : ""}`}>
-          <h2>Transforming Trading since 2005</h2>
+          {/* LEFT CONTENT */}
+          <div className={`trade-left ${tradeVisible ? "animate-left" : ""}`}>
+            <h2>Transforming Trading since 2005</h2>
 
-          <p>
-            Transforming trading is more than just a mission statement.
-            It is embedded in everything we do. We build scalable,
-            sustainable and reliable financial technology that always
-            puts the trader first.
-          </p>
+            <p>
+              Transforming trading is more than just a mission statement.
+              It is embedded in everything we do. We build scalable,
+              sustainable and reliable financial technology that always
+              puts the trader first.
+            </p>
+          </div>
+
+          {/* RIGHT IMAGE */}
+          <div className={`trade-right ${tradeVisible ? "animate-right" : ""}`}>
+            <img src={markettrade} alt="Trading Visual" />
+          </div>
+
         </div>
+      </section>
 
-        {/* RIGHT IMAGE */}
-        <div className={`trade-right ${tradeVisible ? "animate-right" : ""}`}>
-        <img src={markettrade} alt="Trading Visual" />
-        </div>
+      <section className="faq-section" ref={faqRef}>
+        <div className="faq-container">
 
-      </div>
-    </section>
+          {/* LEFT */}
+          <div className={`faq-left ${faqVisible ? "fade-left" : ""}`}>
+            <span className="faq-tag">FAQ</span>
 
-    <section className="faq-section" ref={faqRef}>
-      <div className="faq-container">
+            <h2>
+              Common Investment <br />
+              <span>Guide</span>
+            </h2>
 
-        {/* LEFT */}
-        <div className={`faq-left ${faqVisible ? "fade-left" : ""}`}>
-          <span className="faq-tag">FAQ</span>
+            <p>
+              Stay ahead of the markets with expert insights on forex, inflation trends,
+              central bank policy, commodities, and digital assets delivering actionable
+              intelligence for informed investing.
+            </p>
+          </div>
 
-          <h2>
-            Common Investment <br />
-            <span>Guide</span>
-          </h2>
+          {/* RIGHT */}
+          <div className={`faq-right ${faqVisible ? "fade-right" : ""}`}>
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className={`faq-item ${activeIndex === index ? "active" : ""}`}
+                onClick={() => toggleFAQ(index)}
+              >
+                <div className="faq-question">
+                  {faq.question}
+                  <span>{activeIndex === index ? "−" : "+"}</span>
+                </div>
 
-          <p>
-            Stay ahead of the markets with expert insights on forex, inflation trends,
-            central bank policy, commodities, and digital assets delivering actionable
-            intelligence for informed investing.
-          </p>
-        </div>
-
-        {/* RIGHT */}
-        <div className={`faq-right ${faqVisible ? "fade-right" : ""}`}>
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className={`faq-item ${activeIndex === index ? "active" : ""}`}
-              onClick={() => toggleFAQ(index)}
-            >
-              <div className="faq-question">
-                {faq.question}
-                <span>{activeIndex === index ? "−" : "+"}</span>
+                <div className="faq-answer">
+                  {faq.answer}
+                </div>
               </div>
+            ))}
+          </div>
 
-              <div className="faq-answer">
-                {faq.answer}
+        </div>
+      </section>
+
+      <section className="testimonials-section">
+
+        {/* 🔷 IMAGE COLLAGE */}
+        <div className="collage">
+
+          {/* LEFT SIDE */}
+          <div className="col small">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72" />
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" />
+          </div>
+
+          <div className="col tall">
+            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" />
+          </div>
+
+          <div className="col tall">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" />
+          </div>
+
+          <div className="col tall">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" />
+          </div>
+
+          {/* RIGHT SIDE */}
+          <div className="col tall">
+            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" />
+          </div>
+
+          <div className="col small">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" />
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" />
+          </div>
+
+        </div>
+
+        {/* 🔷 HEADING */}
+        <div className="heading">
+          <span className="tag">Testimonials</span>
+          <h2>
+            Trusted by creatives and leaders <br />
+            <span>from various industries</span>
+          </h2>
+        </div>
+
+        {/* 🔷 TESTIMONIALS */}
+        <div className="testimonial-cards1">
+
+          <div className="card1">
+            <div className="stars">★★★★★</div>
+            <p>
+              "WorkNook makes finding a coworking space so easy! I can book a desk in minutes and get straight to work. Highly recommend!"
+            </p>
+            <div className="user">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" />
+              <div>
+                <h4>Joao M.</h4>
+                <span>Startup Founder</span>
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="card1">
+            <div className="stars">★★★★★</div>
+            <p>
+              "Our team needed a flexible meeting space, and WorkNook delivered. The process was smooth, and the space was exactly what we needed!"
+            </p>
+            <div className="user">
+              <img src="https://randomuser.me/api/portraits/men/44.jpg" />
+              <div>
+                <h4>Bruno K.</h4>
+                <span>UX Designer</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="card1">
+            <div className="stars">★★★★★</div>
+            <p>
+              "I love the variety of spaces available! Whether I need a quiet spot or a collaborative space, WorkNook always has the perfect option."
+            </p>
+            <div className="user">
+              <img src="https://randomuser.me/api/portraits/women/65.jpg" />
+              <div>
+                <h4>Lais A.</h4>
+                <span>Digital Marketer</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-      </div>
-    </section>
+      </section>
+
     </>
   );
 };

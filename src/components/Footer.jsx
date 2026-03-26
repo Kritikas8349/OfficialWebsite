@@ -15,7 +15,7 @@ const Footer = () => {
   return (
 
     <>
-     
+
       <footer className="footer">
 
         {/* TOP SECTION */}

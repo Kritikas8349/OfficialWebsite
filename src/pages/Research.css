@@ -1,0 +1,61 @@
+.research-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    
+    /* 🔥 BACKGROUND IMAGE */
+    background: url("../assets/research.png") no-repeat center center/cover;
+  
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
+  }
+  
+  /* 🔷 GRADIENT OVERLAY (MATCH YOUR THEME) */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  
+  /* 📝 CONTENT */
+  .research-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    color: #fff;
+  }
+  
+  /* 🔥 HEADING */
+  .research-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  /* 📄 PARAGRAPH */
+  .research-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #d1e3ff;
+  }
+  
+  /* 📱 RESPONSIVE */
+  @media (max-width: 768px) {
+    .research-hero {
+      padding: 0 20px;
+      text-align: center;
+      justify-content: center;
+    }
+  
+    .research-content h1 {
+      font-size: 36px;
+    }
+  
+    .research-content p {
+      font-size: 16px;
+    }
+  }
