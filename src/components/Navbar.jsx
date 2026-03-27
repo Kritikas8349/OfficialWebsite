@@ -60,7 +60,7 @@ const Navbar = () => {
         <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
           <a href="/">Home</a>
           <a href="/services">Services</a>
-          <a href="#">Research</a>
+          <a href="/research">Research</a>
           <a href="#">Free Forex Signal</a>
           <a href="/contact">Contact us</a>
           <button className="cta mobile-cta" onClick={() => setShowModal(true)}>
