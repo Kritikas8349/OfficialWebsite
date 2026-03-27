@@ -77,7 +77,7 @@ const Services = () => {
         comexRef.current.innerHTML = "";
 
         const script = document.createElement("script");
-        script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+        script.src = "https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js";
         script.async = true;
 
         script.innerHTML = JSON.stringify({
@@ -339,31 +339,41 @@ const Services = () => {
             </section>
 
             {/* ---------------------------why we are best -----------------------------------------*/}
-            <section className="why-section">
 
-                <div className="why-header">
-                    <h2>WHY WE ARE BEST</h2>
+            <section className="whyBest">
+
+                <div className="wb-header">
+                    <h2>Why We Are Best</h2>
                     <div className="line"></div>
                 </div>
 
-                <div className="why-container">
+                <div className="wb-container">
 
-                    <div className="why-card">
+                    <div className="wb-card">
                         <div className="icon">💰</div>
                         <h3>Right Investment</h3>
-                        <p>We help you maximize returns with smart and strategic investments.</p>
+                        <p>
+                            We help you choose the best strategies to maximize your returns
+                            with smart and data-driven decisions.
+                        </p>
                     </div>
 
-                    <div className="why-card">
+                    <div className="wb-card">
                         <div className="icon">🤝</div>
                         <h3>Personalized Assistance</h3>
-                        <p>24/7 expert guidance tailored to your trading and financial goals.</p>
+                        <p>
+                            Get 24/7 expert support with tailored guidance based on your
+                            trading goals and risk profile.
+                        </p>
                     </div>
 
-                    <div className="why-card">
+                    <div className="wb-card">
                         <div className="icon">👨‍💼</div>
                         <h3>Experienced</h3>
-                        <p>10+ years of experience delivering consistent and reliable results.</p>
+                        <p>
+                            Backed by 10+ years of industry expertise to deliver reliable
+                            and consistent results.
+                        </p>
                     </div>
 
                 </div>

@@ -189,3 +189,228 @@
     display: flex;
   }
 }
+
+/* OVERLAY */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 24, 49, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* MODAL BOX */
+.modal-box {
+  width: 400px;
+  padding: 30px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+
+  animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/*-------------------------------------------- submit------------------------------- */
+
+/* 🔥 OVERLAY (SOFT DARK BLUR BG) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 24, 49, 0.75);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999999;
+}
+
+/* 🔥 MODAL BOX (GLASS + GLOW) */
+.modal-box {
+  width: 420px;
+  max-width: 92%;
+
+  padding: 35px 30px;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  /* 🔥 PREMIUM GLOW */
+  box-shadow: 
+    0 0 40px rgba(1, 180, 244, 0.25),
+    0 20px 60px rgba(0,0,0,0.5);
+
+  color: #fff;
+
+  animation: modalEntry 0.4s ease;
+}
+
+/* ENTRY ANIMATION */
+@keyframes modalEntry {
+  from {
+    transform: translateY(40px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* HEADER */
+.modal-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+
+  font-size: 24px;
+
+  background: linear-gradient(90deg, #fff, #01B4F4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* INPUTS */
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 14px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+
+  transition: 0.3s ease;
+}
+
+/* INPUT FOCUS EFFECT 🔥 */
+.modal-box input:focus,
+.modal-box textarea:focus {
+  border: 1px solid #01B4F4;
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 0 10px rgba(1,180,244,0.4);
+}
+
+/* PLACEHOLDER */
+.modal-box input::placeholder,
+.modal-box textarea::placeholder {
+  color: #cbd5e1;
+}
+
+/* PHONE GROUP */
+.phone-group {
+  display: flex;
+  gap: 10px;
+}
+
+.phone-group input:first-child {
+  width: 30%;
+}
+
+.phone-group input:last-child {
+  width: 70%;
+}
+
+/* BUTTONS */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+/* SUBMIT BUTTON 🔥 */
+.submit-btn {
+  background: linear-gradient(135deg, #01B4F4, #0D1831);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(1,180,244,0.4);
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 10px 20px;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  border-color: #01B4F4;
+  color: #01B4F4;
+}
+
+/* 🔥 PREMIUM SUCCESS POPUP (TOP RIGHT) */
+.success-popup {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+
+  padding: 16px 24px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  color: #fff;
+  font-weight: 500;
+
+  box-shadow: 
+    0 0 20px rgba(1,180,244,0.3),
+    0 10px 30px rgba(0,0,0,0.4);
+
+  z-index: 999999;
+
+  animation: toastSlide 0.5s ease;
+}
+
+/* SLIDE FROM RIGHT 🔥 */
+@keyframes toastSlide {
+  from {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
