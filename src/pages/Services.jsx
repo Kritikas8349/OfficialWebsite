@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Services.css";
-import heroImg from "../assets/mid.png";
+
 
 // const currencies = ["EUR", "USD", "AUD", "GBP", "NZD", "CAD", "CHF", "JPY", "CNY"];
 
@@ -123,11 +123,8 @@ const Services = () => {
     return (
         <div>
 
-            {/*--------------------------------- HERO -----------------------------*/}
-            <section
-                className="servicesHero"
-                style={{ backgroundImage: `url(${heroImg})` }}
-            >
+            {/*--------------------------------- HERO ------------------------------------*/}
+            <section className="servicesHero">
                 <div className="overlay"></div>
 
                 <div className="heroContent">
@@ -161,7 +158,7 @@ const Services = () => {
                 </div>
             </section>
 
-            {/*--------------------------------- HEATMAP------------------------------------ */}
+            {/*--------------------------------- HEATMAP----------------------------------*/}
             <section className="forex-section">
 
                 {/* HEADER */}
@@ -217,7 +214,7 @@ const Services = () => {
 
             </section>
 
-            {/*--------------------------------- graph---------------------------------------- */}
+            {/*--------------------------------- graph------------------------------------*/}
             <section className="forexChart-section">
 
                 {/* HEADER */}
@@ -263,7 +260,7 @@ const Services = () => {
 
             </section>
 
-            {/* ---------------- --------------COMEX HEATMAP----------------- ---------------- */}
+            {/* ---------------- --------------COMEX HEATMAP------------------------------*/}
             <section className="forex-section">
 
                 <div className="forex-header">
@@ -298,7 +295,7 @@ const Services = () => {
 
             </section>
 
-            {/* ---------------- -----------------GOLD CHART------------------- ---------------- */}
+            {/* ---------------- -----------------GOLD CHART------------------- ----------*/}
             <section className="forexChart-section">
 
                 <div className="fc-header">
@@ -338,7 +335,7 @@ const Services = () => {
 
             </section>
 
-            {/* ---------------------------why we are best -----------------------------------------*/}
+            {/* ---------------------------why we are best --------------------------------*/}
 
             <section className="whyBest">
 

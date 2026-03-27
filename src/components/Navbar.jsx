@@ -36,9 +36,9 @@ const Navbar = () => {
         <ul className="nav-center">
           <li><a href="/">Home</a></li>
           <li><a href="/services">Services</a></li>
-          <li><a href="#">Research</a></li>
+          <li><a href="/research">Research</a></li>
           <li><a href="#">Free Forex Signal</a></li>
-          <li><a href="#">Contact us</a></li>
+          <li><a href="/contact">Contact us</a></li>
         </ul>
 
         <div className="nav-right">
@@ -58,11 +58,11 @@ const Navbar = () => {
         </div>
 
         <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
-          <a href="#">Home</a>
-          <a href="#">Services</a>
+          <a href="/">Home</a>
+          <a href="/services">Services</a>
           <a href="#">Research</a>
           <a href="#">Free Forex Signal</a>
-          <a href="#">Insights</a>
+          <a href="/contact">Contact us</a>
           <button className="cta mobile-cta" onClick={() => setShowModal(true)}>
             Get in Touch
           </button>

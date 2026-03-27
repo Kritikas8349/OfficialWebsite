@@ -26,6 +26,7 @@ body {
   padding: 0 8%;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
+  background-image: url("/src/assets/mid.png");
 }
 
 /* 🔥 Overlay (static now) */
@@ -198,8 +199,32 @@ body {
     padding: 40px 20px;
   }
 
+  .heroContent {
+    margin-top: -150px;
+  }
+
   .heroContent h1 {
     font-size: 36px;
+  }
+
+  .desc {
+    margin-top: -10px;
+    font-size: 13px;
+  }
+
+  .servicesList span {
+    font-size: 13px;
+    margin-top: -10px;
+    margin-left: -15px;
+  }
+
+  .servicesHero {
+    background-image: url("/src/assets/ur7r.png");
+    background-position: center;
+  }
+
+  .ctaBtn {
+    display: none;
   }
 }
 
@@ -569,6 +594,14 @@ body {
   background: rgba(255, 255, 255, 0.35);
 }
 
+@media (max-width:1300px) {
+  .forexChart-section {
+    padding: 30px 12px;
+    border-radius: 16px;
+    margin: 10px;
+  }
+}
+
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
@@ -648,7 +681,7 @@ body {
 /*-------------------------------  why we are best SECTION---------------------------- */
 /* SECTION */
 .whyBest {
-  margin: 60px;
+  margin: 50px 60px;
   padding: 100px 20px;
   text-align: center;
   border-radius: 20px;
@@ -730,8 +763,103 @@ body {
 .wb-card:hover {
   border: 1px solid #01B4F4;
 }
+
 .wb-header h2 {
   background: linear-gradient(90deg, #fff, #01B4F4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* ============================= */
+/* 📱 MOBILE (<= 768px) */
+/* ============================= */
+@media (max-width: 768px) {
+
+  .whyBest {
+    margin: 30px 15px;
+    padding: 60px 15px;
+    border-radius: 16px;
+  }
+
+  /* HEADER */
+  .wb-header h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .wb-header .line {
+    width: 80px;
+    margin: 10px auto 30px;
+  }
+
+  /* CONTAINER */
+  .wb-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* CARD */
+  .wb-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 25px 20px;
+  }
+
+  .wb-card .icon {
+    font-size: 32px;
+  }
+
+  .wb-card h3 {
+    font-size: 18px;
+  }
+
+  .wb-card p {
+    font-size: 13px;
+  }
+}
+
+
+/* ============================= */
+/* 📲 TABLET (769px - 1024px) */
+/* ============================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .whyBest {
+    margin: 40px 30px;
+    padding: 80px 20px;
+  }
+
+  .wb-header h2 {
+    font-size: 34px;
+  }
+
+  .wb-container {
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .wb-card {
+    width: 260px;
+    padding: 30px 20px;
+  }
+}
+
+
+/* ============================= */
+/* 💻 LARGE SCREEN (>=1200px) */
+/* ============================= */
+@media (min-width: 1200px) {
+
+  .wb-container {
+    gap: 40px;
+  }
+
+  .wb-card {
+    width: 320px;
+  }
+
+  .wb-header h2 {
+    font-size: 42px;
+  }
 }
