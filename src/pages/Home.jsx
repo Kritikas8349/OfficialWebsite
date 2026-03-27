@@ -4,6 +4,8 @@ import { FaChartLine, FaGlobe, FaBolt } from "react-icons/fa";
 
 import img1 from "../assets/home.png";
 import img2 from "../assets/home2.jpg";
+import img1Mobile from "../assets/homeMobile.png";
+import img2Mobile from "../assets/homeMobile2.png";
 
 import about from "../assets/about.png";
 
@@ -23,7 +25,8 @@ import markettrade from "../assets/markettrade.webp";
 
 
 /* ================= IMAGES ================= */
-const images = [img1, img2];
+const desktopImages = [img1, img2];
+const mobileImages = [img1Mobile, img2Mobile];
 
 const Home = () => {
   /* ================= HERO ================= */
@@ -32,9 +35,9 @@ const Home = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setCurrentIndex((prev) => (prev + 1) % desktopImages.length);
     }, 5000);
-
+  
     return () => clearInterval(interval);
   }, []);
 
@@ -231,14 +234,23 @@ const Home = () => {
           className="slider"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {images.map((img, index) => (
+          {desktopImages.map((img, index) => (
             <div className="slide" key={index}>
 
-              {/* IMAGE */}
-              <img src={img} alt="Trading Background" />
+              {/* 🔥 RESPONSIVE IMAGE */}
+              <picture>
+                {/* MOBILE */}
+                <source
+                  media="(max-width: 768px)"
+                  srcSet={mobileImages[index]}
+                />
 
-              {/* 🔥 GRADIENT ONLY ON SECOND IMAGE */}
-              {index === 1 && <div className="gradient-overlay"></div>}
+                {/* DESKTOP */}
+                <img
+                  src={img}
+                  alt="Trading Background"
+                />
+              </picture>
 
             </div>
           ))}
@@ -265,7 +277,7 @@ const Home = () => {
 
         {/* ✅ SLIDER INDICATORS */}
         <div className="slider-indicators">
-          {images.map((_, index) => (
+        {desktopImages.map((_, index) => (
             <div
               key={index}
               className={`indicator ${currentIndex === index ? "active" : ""}`}
@@ -332,7 +344,7 @@ const Home = () => {
             market analysis, advanced trading tools and comprehensive educational materials.
           </p>
 
-          <button className="learn-btn">START TRADING</button>
+          <button className="learn-btn1">START TRADING</button>
         </div>
       </section>
 
