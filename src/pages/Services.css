@@ -198,9 +198,11 @@ margin-top: -40px;
     background-position: center;
     padding: 40px 20px;
   }
-
+.tag{
+  display: none;
+}
   .heroContent {
-    margin-top: -210px;
+    margin-top: -240px;
   }
 
   .heroContent h1 {
