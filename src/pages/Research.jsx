@@ -1,117 +1,175 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect } from "react";
 import "./Research.css";
 
 const Research = () => {
 
-    useEffect(() => {
-        // TradingView script loader
-        const script = document.createElement("script");
-        script.src = "https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js";
-        script.async = true;
-        script.innerHTML = JSON.stringify({
-            width: "100%",
-            height: "400",
-            currencies: ["EUR", "USD", "JPY", "GBP", "AUD", "CAD", "CHF"],
-            isTransparent: true,
-            colorTheme: "dark",
-            locale: "en"
-        });
+  useEffect(() => {
 
-        document.getElementById("forex-heatmap").appendChild(script);
+    // 🔥 MARKET CHART
+    const chartContainer = document.querySelector("#market-chart .chart-inner");
 
-        // Crypto Heatmap
-        const script2 = document.createElement("script");
-        script2.src = "https://s3.tradingview.com/external-embedding/embed-widget-crypto-coins-heatmap.js";
-        script2.async = true;
-        script2.innerHTML = JSON.stringify({
-            dataSource: "Crypto",
-            blockSize: "market_cap_calc",
-            blockColor: "change",
-            locale: "en",
-            symbolUrl: "",
-            colorTheme: "dark",
-            hasTopBar: false,
-            isDataSetEnabled: false,
-            isZoomEnabled: true,
-            hasSymbolTooltip: true,
-            width: "100%",
-            height: "400"
-        });
+    if (chartContainer) {
+      const chartScript = document.createElement("script");
+      chartScript.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+      chartScript.async = true;
+      chartScript.innerHTML = JSON.stringify({
+        autosize: true,
+        symbol: "NASDAQ:AAPL",
+        interval: "D",
+        timezone: "Etc/UTC",
+        theme: "dark",
+        style: "1",
+        locale: "en"
+      });
 
-        document.getElementById("crypto-heatmap").appendChild(script2);
+      chartContainer.appendChild(chartScript);
+    }
 
-    }, []);
 
-    return (
-        <>
-            <section className="research-hero">
+    const overviewContainer = document.querySelector("#market-overview .chart-inner");
 
-                {/* CONTENT */}
-                <div className="research-content">
-                    <h1>
-                        Market Research & <span>Strategic </span> Market Intelligence
-                    </h1>
+    if (overviewContainer && !overviewContainer.querySelector("script")) {
+      const script = document.createElement("script");
+      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js";
+      script.async = true;
 
-                    <p>
-                        Access real-time market intelligence, precision-based trade signals,
-                        and data-driven strategies built for Forex, Crypto, and Commodities trading.
-                    </p>
+      script.innerHTML = JSON.stringify({
+        colorTheme: "dark",
+        dateRange: "12M",
+        showChart: true,
+        locale: "en",
+        width: "100%",
+        height: "400",
+        isTransparent: true,
+        showSymbolLogo: true,
+        tabs: [
+          {
+            title: "Indices",
+            symbols: [
+              { s: "FOREXCOM:SPXUSD", d: "S&P 500" },
+              { s: "FOREXCOM:NSXUSD", d: "NASDAQ 100" }
+            ]
+          },
+          {
+            title: "Forex",
+            symbols: [
+              { s: "FX:EURUSD", d: "EUR/USD" },
+              { s: "FX:GBPUSD", d: "GBP/USD" }
+            ]
+          },
+          {
+            title: "Crypto",
+            symbols: [
+              { s: "BINANCE:BTCUSDT", d: "Bitcoin" },
+              { s: "BINANCE:ETHUSDT", d: "Ethereum" }
+            ]
+          }
+        ]
+      });
 
-                    {/* 🔥 CTA BUTTON */}
-                    <button className="primary-btn">Get Started Now</button>
-                </div>
+      overviewContainer.appendChild(script);
+    }
 
-            </section>
-            <section className="research-section">
 
-                {/* 🔷 HEADER */}
-                <div className="research-header">
-                    <div className="tag">MARKET INSIGHTS</div>
-                    <h2>Global Market <span>Overview</span></h2>
-                    <p>
-                        Analyze real-time forex and crypto market movements with advanced visual heatmaps.
-                    </p>
-                </div>
+    // 🔥 FOREX
+    const forexContainer = document.querySelector("#forex-heatmap .chart-inner");
 
-                {/* 🔥 GRID */}
-                <div className="research-grid">
+if (forexContainer && !forexContainer.querySelector("script")) {
+  const forexScript = document.createElement("script");
+  forexScript.src = "https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js";
+  forexScript.async = true;
 
-  {/* LEFT */}
-  <div className="left-column">
-    <div className="research-card overview">
-      <h3>Market Overview</h3>
+  forexScript.innerHTML = JSON.stringify({
+    width: "100%",
+    height: "400",
+    currencies: ["EUR", "USD", "JPY", "GBP", "AUD", "CAD", "CHF"],
+    isTransparent: false,
+    colorTheme: "light",
+    locale: "en"
+  });
 
-      <ul>
-        <li><span>S&P 500</span> <span className="positive">+0.45%</span></li>
-        <li><span>NASDAQ</span> <span className="negative">-0.32%</span></li>
-        <li><span>Dow Jones</span> <span className="positive">+0.18%</span></li>
-        <li><span>Gold</span> <span className="positive">+1.12%</span></li>
-        <li><span>Crude Oil</span> <span className="negative">-0.67%</span></li>
-      </ul>
-    </div>
-  </div>
+  forexContainer.appendChild(forexScript);
+}
 
-  {/* RIGHT */}
-  <div className="right-column">
-    <div className="research-card">
-      <h3>Forex Heatmap</h3>
-      <div id="forex-heatmap" className="heatmap-box"></div>
-    </div>
-  </div>
+  }, []);
 
-  {/* FULL WIDTH */}
-  <div className="full-width">
-    <div className="research-card">
-      <h3>Crypto Heatmap</h3>
-      <div id="crypto-heatmap" className="heatmap-box"></div>
-    </div>
-  </div>
+  return (
+    <>
+      {/* 🔥 HERO */}
+      <section className="research-hero">
+        <div className="research-content">
+          <h1 className="fade-up">
+            Market Research & <span>Strategic</span> Intelligence
+          </h1>
 
-</div>
+          <p className="fade-up delay-1">
+            Access real-time market intelligence, precision-based trade signals,
+            and data-driven strategies.
+          </p>
 
-            </section>
-        </>
-    );
+          <button className="primary-btn fade-up delay-2">
+            Get Started
+          </button>
+        </div>
+      </section>
+
+      {/* 🔥 SECTION */}
+      <section className="research-section">
+
+        {/* 🔷 HEADER */}
+        <div className="research-header">
+          <div className="tag">MARKET INSIGHTS</div>
+          <h2>Global Market <span>Overview</span></h2>
+          <p>
+          Analyze real-time forex and cryptocurrency market movements with advanced interactive charts, 
+          live data insights, and dynamic visualizations. Stay informed with accurate trends, price actions,
+           and market behavior to make smarter trading decisions.
+          </p>
+        </div>
+
+        {/* 🔥 GRID */}
+        <div className="research-grid">
+
+          {/* 📊 LEFT - MARKET CHART */}
+          <div className="left-column">
+            <div className="research-card">
+              <h3>Live Market Chart</h3>
+
+              <div id="market-chart" className="chart-box">
+                <div className="chart-inner"></div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* ✅ 📊 RIGHT - MARKET OVERVIEW (UPDATED) */}
+          <div className="right-column">
+            <div className="research-card">
+              <h3>Market Overview</h3>
+
+              <div id="market-overview" className="chart-box">
+                <div className="chart-inner"></div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div className="full-width">
+            <div className="research-card">
+              <h3>Forex Heatmap</h3>
+
+              <div id="forex-heatmap" className="chart-box">
+                <div className="chart-inner"></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default Research;

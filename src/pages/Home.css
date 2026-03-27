@@ -168,15 +168,28 @@ body {
   width: 60px;
 }
 
+.slide picture,
+.slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.slide picture img {
+  object-fit: cover;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .hero-content {
     left: 20px;
     right: 20px;
+    margin-top: -60px;
+    padding: 8px;
   }
 
   .hero-content h1 {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .hero-content p {
@@ -563,7 +576,6 @@ body {
   overflow: hidden;
   margin-top: 80px;
   padding: 0 6%;
-  /* 🔥 key for responsiveness */
 }
 
 /* ================= BACKGROUND ================= */
@@ -572,18 +584,9 @@ body {
   position: absolute;
   inset: 0;
   margin: 60px;
-  border-radius: 6px;
+  border-radius: 10px;
   background: url("../assets/mid.jpeg") center/cover no-repeat;
   z-index: 1;
-}
-
-/* ================= OVERLAY ================= */
-
-.learn-overlay {
-  position: absolute;
-  inset: 0;
-  /* background: rgba(0, 0, 0, 0.4); */
-  z-index: 2;
 }
 
 /* ================= CONTENT ================= */
@@ -591,21 +594,11 @@ body {
 .learn-content {
   position: relative;
   z-index: 3;
-
   max-width: 550px;
   width: 100%;
-
   color: #fff;
   text-align: left;
-  /* ✅ always left */
 
-  /* animation */
-  opacity: 0;
-  transform: translateY(40px);
-
-}
-
-.learn-content {
   opacity: 0;
   transform: translateY(40px);
   transition: all 1s ease;
@@ -620,7 +613,6 @@ body {
 
 .learn-content h2 {
   font-size: clamp(28px, 5vw, 44px);
-  /* 🔥 responsive font */
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 20px;
@@ -635,7 +627,7 @@ body {
 
 /* ================= BUTTON ================= */
 
-.learn-btn {
+.learn-btn1 {
   padding: 12px 28px;
   border: 1px solid #fff;
   background: transparent;
@@ -647,48 +639,109 @@ body {
   transition: all 0.3s ease;
 }
 
-.learn-btn:hover {
+.learn-btn1:hover {
   background: #4da6ff;
   border-color: #4da6ff;
 }
 
-/* ================= ANIMATION ================= */
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ================= TABLET ================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+
   .learn-section {
-    padding: 80px 5%;
-    min-height: auto;
+    justify-content: center; /* center content */
+    padding: 0 20px;
+  }
+
+  .learn-bg {
+    margin: 30px; /* reduce gap */
   }
 
   .learn-content {
-    max-width: 500px;
+    text-align: center;
+    max-width: 90%;
   }
+
 }
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
   .learn-section {
-    padding: 60px 20px;
+    min-height: 70vh;
+    margin-top: 50px;
+    padding: 0 15px;
+  }
+
+  .learn-bg {
+    margin: 15px;
+    border-radius: 8px;
+  }
+
+  .learn-content h2 {
+    font-size: 26px;
+  }
+
+  .learn-content p {
+    font-size: 14px;
+  }
+
+  .learn-btn1 {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+  .learn-section {
+    min-height: 65vh;
+  }
+
+  .learn-bg {
+    margin: 10px;
   }
 
   .learn-content {
     max-width: 100%;
   }
 
-  .learn-btn {
-    width: fit-content;
+  .learn-content h2 {
+    font-size: 22px;
   }
+
+  .learn-content p {
+    font-size: 13px;
+  }
+
 }
+
+/* ================= EXTRA SMALL ================= */
+
+@media (max-width: 360px) {
+
+  .learn-content h2 {
+    font-size: 20px;
+  }
+
+  .learn-content p {
+    font-size: 12px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
 
 
 /*--------Services-----------*/
@@ -2011,45 +2064,48 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 30px;
+  gap: clamp(10px, 2vw, 30px);
   margin-bottom: 50px;
   flex-wrap: wrap;
 }
 
+/* COLUMN */
 .col {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: clamp(8px, 1.5vw, 15px);
 }
 
+/* IMAGE BASE */
 .col img {
-  width: 160px;
-  border-radius: 20px;
+  width: clamp(80px, 12vw, 180px); /* 🔥 responsive width */
+  border-radius: 16px;
   object-fit: cover;
+  display: block;
 }
 
-/* Different sizes */
+/* HEIGHT VARIANTS (RESPONSIVE) */
 .col.small img {
-  height: 100px;
+  height: clamp(60px, 8vw, 110px);
 }
 
 .col.medium img {
-  height: 150px;
+  height: clamp(90px, 12vw, 160px);
 }
 
 .col.tall img {
-  height: 250px;
+  height: clamp(140px, 18vw, 260px);
 }
 
-/* 🔥 STAGGER EFFECT */
+/* 🔥 STAGGER EFFECT (RESPONSIVE) */
 .collage .col:nth-child(2),
 .collage .col:nth-child(5) {
-  transform: translateY(-40px);
+  transform: translateY(clamp(-15px, -3vw, -40px));
 }
 
 .collage .col:nth-child(3),
 .collage .col:nth-child(4) {
-  transform: translateY(-60px);
+  transform: translateY(clamp(-25px, -4vw, -60px));
 }
 
 /* 🔷 HEADING */

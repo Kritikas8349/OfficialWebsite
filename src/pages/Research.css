@@ -1,245 +1,207 @@
+/* 🔥 HERO */
 .research-hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    
-    /* 🔥 BACKGROUND IMAGE */
-    background: url("../assets/research.png") no-repeat center center/cover;
-  
-    display: flex;
-    align-items: center;
-    padding: 0 80px;
-    font-family: "Inter", sans-serif;
-    overflow: hidden;
-  }
-  
-  /* 🔷 GRADIENT OVERLAY (MATCH YOUR THEME) */
-  .overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-  }
-  
-  /* 📝 CONTENT */
-  .research-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-    color: #fff;
-  }
-
-  .research-content span{
-    color: #4da6ff;
-  }
-  
-  /* 🔥 HEADING */
-  .research-content h1 {
-    font-size: 54px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-  }
-  
-  /* 📄 PARAGRAPH */
-  .research-content p {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #d1e3ff;
-  }
-
-  .primary-btn {
-    margin-top: 30px;
-    padding: 12px 28px;
-    border-radius: 30px;
-    border: 1px solid white;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+  height: 100vh;
+  background: url("../assets/research.png") no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
 }
-  
-  
-  /* 🔥 Hover Effect */
-  .primary-btn:hover {
-    background: #4da6ff;
-  }
 
+.research-content {
+  color: white;
+  max-width: 600px;
+}
 
-  /* 🔥 Base Animation */
+.research-content h1 {
+  font-size: 52px;
+}
+
+.research-content p{
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.research-content span {
+  color: #4da6ff;
+}
+
+.primary-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: white;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background: #4da6ff;
+  border: 1px solid #4da6ff;
+}
+
+/* 🔥 ANIMATION */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
   animation: fadeUp 0.8s ease forwards;
 }
 
-/* ⏱ Delay Variants */
-.delay-1 {
-  animation-delay: 0.3s;
-}
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
 
-.delay-2 {
-  animation-delay: 0.6s;
-}
-
-/* ✨ Keyframes */
 @keyframes fadeUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-  
-  /* 📱 RESPONSIVE */
-  @media (max-width: 768px) {
-    .research-hero {
-      padding: 0 20px;
-      text-align: center;
-      justify-content: center;
-    }
-  
-    .research-content h1 {
-      font-size: 36px;
-    }
-  
-    .research-content p {
-      font-size: 16px;
-    }
-  }
 
 
 
-  .research-section {
-    padding: 80px 20px;
-    background: #fff;
-    color: #000;
-    font-family: "Inter", sans-serif;
-  }
-  
-  /* 🔷 HEADER */
-  .research-header {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
-  .research-header .tag {
-    color: #fff;
+
+/* 🔥 SECTION */
+.research-section {
+  padding: 60px;
+  background: #ffffff;
+  color: #000;
+  font-family: "Inter", sans-serif;
+}
+
+/* 🔷 HEADER */
+.research-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.research-header .tag {
+  display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
     font-size: 14px;
+    font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
-  
-  .research-header h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  
-  .research-header span {
-    color: #01b4f4;
-  }
-  
-  .research-header p {
+    background-color: #4da6ff;
+    color: #fff;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.research-header h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.research-header span {
+  color: #1e90ff;
+}
+
+.research-header p {
+  max-width: 900px;
+    margin: 25px auto;
+    padding: 20px 25px;
+    font-size: 18px;
+    line-height: 1.5;
     color: #000;
-    max-width: 600px;
-    margin: auto;
-  }
-  
-  /* 🔥 GRID */
+    background: #cde3f9;
+    border-left: 5px solid #4da6ff;
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* 🔥 GRID */
+.research-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* FULL WIDTH */
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* 🔥 CARD */
+.research-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 15px;
+  border: 4px solid #066c9c;
+  overflow: hidden; /* ✅ FIX */
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+}
+
+/* 🔥 TITLE */
+.research-card h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* 🔥 CHART BOX */
+.chart-box {
+  width: 100%;
+  height: 420px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden; /* ✅ KEY */
+}
+
+/* 🔥 INNER WRAPPER */
+.chart-inner {
+  width: 100%;
+  height: 100%;
+}
+
+/* 🔥 TRADINGVIEW FIX */
+.chart-inner iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+}
+
+
+
+/* 🔥 RESPONSIVE */
+
+/* 💻 TABLET */
+@media (max-width: 1024px) {
   .research-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 25px;
+    grid-template-columns: 1fr;
   }
-  
-  /* LEFT SIDE */
-  .left-column {
-    grid-column: 1 / 2;
+
+  .chart-box {
+    height: 380px;
   }
-  
-  /* RIGHT SIDE */
-  .right-column {
-    grid-column: 2 / 3;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+  .research-section {
+    padding: 40px 15px;
   }
-  
-  /* FULL WIDTH (Crypto) */
-  .full-width {
-    grid-column: 1 / 3;
+
+  .research-header h2 {
+    font-size: 24px;
   }
-  
-  /* CARD FIX */
+
   .research-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 18px;
-    padding: 20px;
-    border: 1px solid #000;
-    height: 100%;
+    padding: 12px;
   }
-  
-  /* HEATMAP FIX (VERY IMPORTANT) */
-  .heatmap-box {
-    width: 100%;
-    height: 450px;
-    overflow: hidden;
+
+  .chart-box {
+    height: 300px;
   }
-  
-  /* REMOVE EXTRA SPACE FROM WIDGET */
-  .heatmap-box iframe {
-    width: 100% !important;
-    height: 100% !important;
+}
+
+/* 📱 EXTRA SMALL */
+@media (max-width: 400px) {
+  .chart-box {
+    height: 260px;
   }
-  
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .research-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .left-column,
-    .right-column,
-    .full-width {
-      grid-column: 1 / 2;
-    }
-  }
-  
-  /* 📦 CARD */
-  .research-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 18px;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  
-  /* OVERVIEW CARD */
-  .overview ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .overview li {
-    display: flex;
-    justify-content: space-between;
-    margin: 12px 0;
-    font-size: 15px;
-  }
-  
-  /* COLORS */
-  .positive {
-    color: #00ff9d;
-  }
-  
-  .negative {
-    color: #ff4d4d;
-  }
-  
-  /* HEATMAP */
-  .heatmap-box {
-    width: 100%;
-    height: 400px;
-  }
-  
-  /* 📱 RESPONSIVE */
-  @media (max-width: 900px) {
-    .research-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}

@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
-// import Services from "./pages/Services"; 
+import Services from "./pages/Services"; 
 import Research from "./pages/Research";
 // import Signals from "./pages/Signals";
 // import Insights from "./pages/Insights";
@@ -16,7 +16,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/services" element={<Services />} /> */}
+        <Route path="/services" element={<Services />} />
         <Route path="/research" element={<Research />} />
         {/* <Route path="/signals" element={<Signals />} /> */}
         {/* <Route path="/insights" element={<Insights />} /> */}

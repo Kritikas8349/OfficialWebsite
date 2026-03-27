@@ -36,7 +36,7 @@ const Navbar = () => {
         <ul className="nav-center">
           <li><a href="/">Home</a></li>
           <li><a href="/services">Services</a></li>
-          <li><a href="#">Research</a></li>
+          <li><a href="/research">Research</a></li>
           <li><a href="#">Free Forex Signal</a></li>
           <li><a href="#">Contact us</a></li>
         </ul>
