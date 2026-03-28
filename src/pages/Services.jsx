@@ -174,7 +174,7 @@ const Services = () => {
 
                     {/* LEFT → TABS */}
                     <div className="forex-tabs">
-                        {["Overview", "Europe & Americas", "Asia-Pacific", "G7 & BRICS"].map(
+                        {["Overview"].map(
                             (tab, i) => (
                                 <button key={i} className={i === 0 ? "active" : ""}>
                                     {tab}
@@ -228,7 +228,7 @@ const Services = () => {
 
                     {/* LEFT TABS */}
                     <div className="fc-tabs">
-                        {["EUR/USD", "GBP/USD", "USD/JPY", "AUD/USD"].map((pair, i) => (
+                        {["EUR/USD"].map((pair, i) => (
                             <button key={i} className={i === 0 ? "active" : ""}>
                                 {pair}
                             </button>

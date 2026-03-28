@@ -82,9 +82,10 @@ const Contact = () => {
       {/* BANNER */}
       <section className="contact-banner">
         <div className="overlay"></div>
-        <div className="content">
-          <h1>Contact Us</h1>
-        </div>
+
+        {/* BIG BACKGROUND TEXT */}
+        <h1 className="bg-text">CONTACT US</h1>
+
       </section>
 
       {/* FORM SECTION */}

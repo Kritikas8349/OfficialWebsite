@@ -767,9 +767,18 @@ margin-top: -40px;
 }
 
 .wb-header h2 {
-  background: linear-gradient(90deg, #fff, #01B4F4);
+  font-size: 40px;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, #ffffff, #01B4F4);
+
   -webkit-background-clip: text;
+  background-clip: text;
+
   -webkit-text-fill-color: transparent;
+
+  /* 🔥 fallback */
+  color: #ffffff;
 }
 
 /* ============================= */
