@@ -37,7 +37,7 @@ const Home = () => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % desktopImages.length);
     }, 5000);
-  
+
     return () => clearInterval(interval);
   }, []);
 
@@ -146,17 +146,17 @@ const Home = () => {
   }, []);
 
   /* ================= TRADE ================= */
-  const tradeRef = useRef(null);
-  const [tradeVisible, setTradeVisible] = useState(false);
+  // const tradeRef = useRef(null);
+  // const [tradeVisible, setTradeVisible] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) setTradeVisible(true);
-    });
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(([entry]) => {
+  //     if (entry.isIntersecting) setTradeVisible(true);
+  //   });
 
-    if (tradeRef.current) observer.observe(tradeRef.current);
-    return () => observer.disconnect();
-  }, []);
+  //   if (tradeRef.current) observer.observe(tradeRef.current);
+  //   return () => observer.disconnect();
+  // }, []);
 
   /* ================= FAQ ================= */
   const faqRef = useRef(null);
@@ -238,19 +238,14 @@ const Home = () => {
             <div className="slide" key={index}>
 
               {/* 🔥 RESPONSIVE IMAGE */}
-              <picture>
-                {/* MOBILE */}
-                <source
-                  media="(max-width: 768px)"
-                  srcSet={mobileImages[index]}
-                />
-
-                {/* DESKTOP */}
-                <img
-                  src={img}
-                  alt="Trading Background"
-                />
-              </picture>
+              <img
+                src={
+                  window.innerWidth <= 768
+                    ? (mobileImages[index] || img)
+                    : img
+                }
+                alt="Trading Background"
+              />
 
             </div>
           ))}
@@ -277,7 +272,7 @@ const Home = () => {
 
         {/* ✅ SLIDER INDICATORS */}
         <div className="slider-indicators">
-        {desktopImages.map((_, index) => (
+          {desktopImages.map((_, index) => (
             <div
               key={index}
               className={`indicator ${currentIndex === index ? "active" : ""}`}
@@ -303,7 +298,7 @@ const Home = () => {
           <p className="about-tag">ABOUT US</p>
 
           <h2 className="about-title">
-            Your Partner in Smarter Trading Decisions
+            Your Partner in <span>Smarter Trading</span> Decisions
           </h2>
 
           <p className="about-text">
@@ -355,7 +350,7 @@ const Home = () => {
         ref={serviceRef}
       >
         <div className="section-tag">OUR SERVICES</div>
-        <h2>What can you trade with Capex?</h2>
+        <h2>What can you <span>trade</span> with Capex?</h2>
 
         <div className="scroll-wrapper">
 
@@ -548,11 +543,11 @@ const Home = () => {
       </section>
 
 
-      <section className="trade-sec" ref={tradeRef}>
+      <section className="trade-sec">
         <div className="trade-box">
 
           {/* LEFT CONTENT */}
-          <div className={`trade-left ${tradeVisible ? "animate-left" : ""}`}>
+          <div className="trade-left">
             <h2>Transforming Trading since 2005</h2>
 
             <p>
@@ -564,7 +559,7 @@ const Home = () => {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className={`trade-right ${tradeVisible ? "animate-right" : ""}`}>
+          <div className="trade-right">
             <img src={markettrade} alt="Trading Visual" />
           </div>
 
