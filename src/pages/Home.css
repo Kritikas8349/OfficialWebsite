@@ -585,7 +585,7 @@ body {
   inset: 0;
   margin: 60px;
   border-radius: 10px;
-  background: url("../assets/mid.jpeg") center/cover no-repeat;
+  background: url("../assets/mid.png") center/cover no-repeat;
   z-index: 1;
 }
 
@@ -677,6 +677,9 @@ body {
   .learn-bg {
     margin: 15px;
     border-radius: 8px;
+
+    /* 🔥 CHANGE IMAGE HERE */
+    background: url("../assets/ur7r.png") center/cover no-repeat;
   }
 
   .learn-content h2 {
@@ -708,6 +711,8 @@ body {
 
   .learn-content {
     max-width: 100%;
+    margin-bottom: 180px;
+    padding: 0 30px;
   }
 
   .learn-content h2 {
@@ -1683,6 +1688,9 @@ body {
 }
 
 
+
+
+
 /* ================= SECTION ================= */
 
 .trade-sec {
@@ -1878,9 +1886,11 @@ body {
   }
 
   .trade-right {
-    width: 130%;
-    max-width: 380px;
-    right: -60px;
+    position: relative;
+    right: 0;              /* ❌ remove negative */
+    transform: none;       /* ❌ remove push */
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -2319,4 +2329,11 @@ body {
   .col img {
     width: 180px;
   }
+}
+
+
+
+/* NEW SECTION SPACING */
+.research-grid + .research-grid {
+  margin: 20px;
 }

@@ -5,7 +5,7 @@ import { FaChartLine, FaGlobe, FaBolt } from "react-icons/fa";
 import img1 from "../assets/home.png";
 import img2 from "../assets/home2.jpg";
 import img1Mobile from "../assets/homeMobile.png";
-import img2Mobile from "../assets/homeMobile2.png";
+import img2Mobile from "../assets/ur7r.png";
 
 import about from "../assets/about.png";
 

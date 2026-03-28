@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 40px;
+  padding: 18px 50px;
   background: transparent;
   /* initial */
   color: white;
@@ -50,8 +50,8 @@
 }
 
 .navbar.scrolled .nav-center a:hover {
-  color: #4da6ff;
-  font-weight: 600;
+  color: #fff;
+  font-weight: 800;
 }
 
 .navbar.scrolled .cta {
@@ -60,10 +60,18 @@
 }
 
 /* LOGO */
-.logo {
-  font-size: 26px;
-  font-weight: bold;
-  color: #fff;
+/* 🔥 LOGO IMAGE */
+.logo img {
+  height: 40px;   /* desktop */
+  width: auto;
+  object-fit: contain;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .logo img {
+    height: 32px;
+  }
 }
 
 /* CENTER MENU */
@@ -73,17 +81,69 @@
   list-style: none;
 }
 
+/* DEFAULT */
 .nav-center a {
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
+  transition: 0.3s;
+  position: relative;
+}
+
+/* 🔥 UNDERLINE BASE */
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.nav-center a:hover::after {
+  width: 100%;
+}
+
+/* 🔥 ACTIVE LINK */
+.nav-center a.active {
+  color: white;
+}
+
+.nav-center a.active::after {
+  width: 100%;
+}
+
+/* BASE */
+.nav-link {
+  text-decoration: none;
+  color: white;
+  position: relative;
   transition: 0.3s;
 }
 
-.nav-center a:hover {
-  color: #4da6ff;
+/* UNDERLINE BASE */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
 }
 
+/* 🔥 ACTIVE (IMPORTANT FIX) */
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: white;
+}
 /* RIGHT SECTION */
 .nav-right {
   display: flex;
@@ -92,17 +152,18 @@
 }
 
 /* CTA */
-.cta {
+.cta-navbar {
   padding: 8px 16px;
   background: #4da6ff;
   border-radius: 30px;
   color: white;
   text-decoration: none;
   transition: 0.3s;
+  border: 1px solid #4da6ff;
 }
 
-.cta:hover {
-  background: #3399ff;
+.cta-navbar:hover {
+  background-color: #0f7ae5;
 }
 
 /* HAMBURGER BUTTON */
@@ -284,10 +345,14 @@
 .modal-box h2 {
   text-align: center;
   margin-bottom: 20px;
-
   font-size: 24px;
 
   background: linear-gradient(90deg, #fff, #01B4F4);
+
+  /* ✅ ADD THIS */
+  background-clip: text;
+
+  /* existing */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

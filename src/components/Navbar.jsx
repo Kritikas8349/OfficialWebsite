@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+import { NavLink } from "react-router-dom";
+import logo from "../assets/logo.png";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,19 +34,45 @@ const Navbar = () => {
   return (
     <>
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-        <div className="logo">CAPEX 1.0</div>
+        <div className="logo">
+          <img src={logo} alt="Capex Logo" />
+        </div>
 
         <ul className="nav-center">
-          <li><a href="/">Home</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/research">Research</a></li>
-          <li><a href="#">Free Forex Signal</a></li>
-          <li><a href="/contact">Contact us</a></li>
+          <li>
+            <NavLink to="/" end className="nav-link">
+              Home
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/services" className="nav-link">
+              Services
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/research" className="nav-link">
+              Research
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/signals" className="nav-link">
+              Forex Signal
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/contact" className="nav-link">
+              Contact us
+            </NavLink>
+          </li>
         </ul>
 
         <div className="nav-right">
           {/* 🔥 CLICK HERE */}
-          <button className="cta" onClick={() => setShowModal(true)}>
+          <button className="cta-navbar" onClick={() => setShowModal(true)}>
             Get in Touch
           </button>
 
@@ -58,11 +87,11 @@ const Navbar = () => {
         </div>
 
         <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
-          <a href="/">Home</a>
-          <a href="/services">Services</a>
-          <a href="/research">Research</a>
-          <a href="#">Free Forex Signal</a>
-          <a href="/contact">Contact us</a>
+          <NavLink to="/" onClick={() => setIsOpen(false)}>Home</NavLink>
+          <NavLink to="/services" onClick={() => setIsOpen(false)}>Services</NavLink>
+          <NavLink to="/research" onClick={() => setIsOpen(false)}>Research</NavLink>
+          <NavLink to="/signals" onClick={() => setIsOpen(false)}>Free Forex Signal</NavLink>
+          <NavLink to="/contact" onClick={() => setIsOpen(false)}>Contact us</NavLink>
           <button className="cta mobile-cta" onClick={() => setShowModal(true)}>
             Get in Touch
           </button>
