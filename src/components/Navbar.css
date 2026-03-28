@@ -205,10 +205,10 @@
 /* MOBILE DRAWER */
 .mobile-menu {
   position: fixed;
-  top: 0;
+  top: 10px;
   right: -100%;
   width: 260px;
-  height: 100vh;
+  height: 52vh;
   background: #0a0f2c;
   display: flex;
   flex-direction: column;
@@ -216,6 +216,9 @@
   gap: 25px;
   transition: right 0.35s ease;
   z-index: 1000;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  /* margin-right: 20px; */
 }
 
 /* OPEN STATE */
@@ -478,4 +481,34 @@
     transform: translateX(0);
     opacity: 1;
   }
+}
+@media (max-width: 768px) {
+  .nav-center {
+    display: none;
+  }
+
+  /* 🔥 Navbar button hide */
+  .cta-navbar {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+.mobile-cta {
+  margin-top: auto; /* 🔥 pushes button to bottom */
+  padding: 14px;
+  width:70%;
+  margin-left: 0px   ;
+  background-color: #4da6ff;
+  border-radius: 25px;
+
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+
+  display: block; /* important */
 }

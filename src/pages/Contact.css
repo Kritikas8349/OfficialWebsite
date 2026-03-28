@@ -91,9 +91,12 @@ body {
 }
 
 .contact-left p {
-  color: #6b7280;
+  color: #000000;
   margin-bottom: 22px;
-  font-size: 15px;
+  font-size: 16px;
+}
+.contact-left p b{
+  color: #4da6ff;
 }
 
 .row {
