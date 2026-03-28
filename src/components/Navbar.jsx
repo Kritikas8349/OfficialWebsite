@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo.png";
 
+// 🔥 IMPORT BOTH LOGOS
+import logo from "../assets/logo.png";     // default (light)
+import logo1 from "../assets/logo1.png";   // scrolled (dark)
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // 🔥 NEW STATES
   const [showModal, setShowModal] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  // 🔥 SCROLL DETECT
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -22,7 +24,6 @@ const Navbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setShowModal(false);
     setSuccess(true);
 
@@ -34,48 +35,36 @@ const Navbar = () => {
   return (
     <>
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+        
+        {/* 🔥 LOGO SWITCH */}
         <div className="logo">
-          <img src={logo} alt="Capex Logo" />
+          <img
+            src={scrolled ? logo : logo1}
+            alt="Capex Logo"
+          />
         </div>
 
+        {/* DESKTOP MENU */}
         <ul className="nav-center">
-          <li>
-            <NavLink to="/" end className="nav-link">
-              Home
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/services" className="nav-link">
-              Services
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/research" className="nav-link">
-              Research
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/signals" className="nav-link">
-              Forex Signal
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/contact" className="nav-link">
-              Contact us
-            </NavLink>
-          </li>
+          <li><NavLink to="/" end className="nav-link">Home</NavLink></li>
+          <li><NavLink to="/services" className="nav-link">Services</NavLink></li>
+          <li><NavLink to="/research" className="nav-link">Research</NavLink></li>
+          <li><NavLink to="/signals" className="nav-link">Forex Signal</NavLink></li>
+          <li><NavLink to="/contact" className="nav-link">Contact us</NavLink></li>
         </ul>
 
+        {/* RIGHT SIDE */}
         <div className="nav-right">
-          {/* 🔥 CLICK HERE */}
-          <button className="cta-navbar" onClick={() => setShowModal(true)}>
+          
+          {/* DESKTOP CTA */}
+          <button
+            className="cta-navbar"
+            onClick={() => setShowModal(true)}
+          >
             Get in Touch
           </button>
 
+          {/* HAMBURGER */}
           <button
             className={`hamburger ${isOpen ? "active" : ""}`}
             onClick={() => setIsOpen(!isOpen)}
@@ -86,13 +75,20 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* 🔥 MOBILE MENU */}
         <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
+          
           <NavLink to="/" onClick={() => setIsOpen(false)}>Home</NavLink>
           <NavLink to="/services" onClick={() => setIsOpen(false)}>Services</NavLink>
           <NavLink to="/research" onClick={() => setIsOpen(false)}>Research</NavLink>
           <NavLink to="/signals" onClick={() => setIsOpen(false)}>Free Forex Signal</NavLink>
           <NavLink to="/contact" onClick={() => setIsOpen(false)}>Contact us</NavLink>
-          <button className="cta mobile-cta" onClick={() => setShowModal(true)}>
+
+          {/* 🔥 MOBILE CTA FIXED */}
+          <button
+            className="mobile-cta"
+            onClick={() => setShowModal(true)}
+          >
             Get in Touch
           </button>
         </div>
@@ -132,7 +128,7 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* ✅ SUCCESS POPUP */}
+      {/* ✅ SUCCESS */}
       {success && (
         <div className="success-popup">
           ✅ Successfully submitted! We will contact you soon.
