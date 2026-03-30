@@ -182,7 +182,11 @@
   transform-origin: center;
 }
 .navbar.scrolled .hamburger span {
-  background: black;
+  background: black !important;
+}
+
+.hamburger.active span{
+  background:#000000;
 }
 
 /* 🔥 PERFECT CROSS */
@@ -497,7 +501,7 @@
 
 .mobile-cta {
   margin-top: auto; /* 🔥 pushes button to bottom */
-  padding: 14px;
+  padding: 8px 14px;
   width:70%;
   margin-left: 0px   ;
   background-color: #4da6ff;
