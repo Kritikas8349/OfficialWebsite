@@ -62,8 +62,9 @@
 @media (max-width: 768px) {
   .logo img {
     height: 52px;
-    margin-top: -5px;
-    margin-left: -13px;
+    /* margin-top: px; */
+    margin-top: 15px;
+    margin-left: -40px;
   }
 }
 
