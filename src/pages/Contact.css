@@ -378,7 +378,7 @@ body {
   border-radius: 20px;
 
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(20px);
+  backdrop-filter: (20px);
 
   border: 1px solid rgba(255,255,255,0.2);
   color: #fff;

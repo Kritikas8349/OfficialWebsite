@@ -7,11 +7,13 @@ import Services from "./pages/Services";
 import Research from "./pages/Research";
 // import Signals from "./pages/Signals";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./ScrollToTop";
 
 
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <Navbar />
 
       <Routes>

@@ -3,8 +3,8 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 
 // 🔥 IMPORT BOTH LOGOS
-import logo from "../assets/logo.png";     // default (light)
-import logo1 from "../assets/logo1.png";   // scrolled (dark)
+import logo from "../assets/logo.png";     // light (for transparent)
+import logo1 from "../assets/logo1.png";   // dark (for white bg)
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,12 +13,22 @@ const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  // 🔥 SCROLL DETECT
+  // 🔥 SCROLL DETECT (FIXED)
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      console.log("scrollY:", window.scrollY); // 🔥 debug
+  
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
+  
     window.addEventListener("scroll", handleScroll);
+  
+    handleScroll(); // initial run
+  
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -36,7 +46,7 @@ const Navbar = () => {
     <>
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         
-        {/* 🔥 LOGO SWITCH */}
+        {/* 🔥 LOGO SWITCH FIXED */}
         <div className="logo">
           <img
             src={scrolled ? logo : logo1}
@@ -84,7 +94,7 @@ const Navbar = () => {
           <NavLink to="/signals" onClick={() => setIsOpen(false)}>Free Forex Signal</NavLink>
           <NavLink to="/contact" onClick={() => setIsOpen(false)}>Contact us</NavLink>
 
-          {/* 🔥 MOBILE CTA FIXED */}
+          {/* 🔥 MOBILE CTA */}
           <button
             className="mobile-cta"
             onClick={() => setShowModal(true)}
