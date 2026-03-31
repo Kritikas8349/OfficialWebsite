@@ -93,69 +93,65 @@ const Research = () => {
 
   }, []);
 
-  // 🔥 ECONOMIC CALENDAR
-  const calendarContainer = document.querySelector("#economic-calendar .chart-inner");
+  useEffect(() => {
 
-  if (calendarContainer && !calendarContainer.querySelector("script")) {
-    const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-events.js";
-    script.async = true;
-
-    script.innerHTML = JSON.stringify({
-      colorTheme: "light",
-      isTransparent: false,
-      width: "100%",
-      height: "400",
-      locale: "en",
-      importanceFilter: "-1,0,1"
-    });
-
-    calendarContainer.appendChild(script);
-  }
-
-
-  // 🔥 MARKET QUOTES
-  const quotesContainer = document.querySelector("#market-quotes .chart-inner");
-
-  if (quotesContainer && !quotesContainer.querySelector("script")) {
-    const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js";
-    script.async = true;
-
-    script.innerHTML = JSON.stringify({
-      width: "100%",
-      height: "400",
-      symbolsGroups: [
-        {
-          name: "Indices",
-          symbols: [
-            { name: "FOREXCOM:SPXUSD", displayName: "S&P 500" },
-            { name: "FOREXCOM:NSXUSD", displayName: "NASDAQ 100" }
-          ]
-        },
-        {
-          name: "Forex",
-          symbols: [
-            { name: "FX:EURUSD", displayName: "EUR/USD" },
-            { name: "FX:USDINR", displayName: "USD/INR" }
-          ]
-        },
-        {
-          name: "Crypto",
-          symbols: [
-            { name: "BINANCE:BTCUSDT", displayName: "Bitcoin" },
-            { name: "BINANCE:ETHUSDT", displayName: "Ethereum" }
-          ]
-        }
-      ],
-      showSymbolLogo: true,
-      colorTheme: "light",
-      isTransparent: false,
-      locale: "en"
-    });
-
-    quotesContainer.appendChild(script);
-  }
+    // 🔥 ECONOMIC CALENDAR
+    const calendarContainer = document.querySelector("#economic-calendar .market-chart-inner");
+  
+    if (calendarContainer && !calendarContainer.querySelector("script")) {
+      const script = document.createElement("script");
+      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-events.js";
+      script.async = true;
+  
+      script.innerHTML = JSON.stringify({
+        colorTheme: "light",
+        isTransparent: false,
+        width: "100%",
+        height: "400",
+        locale: "en",
+        importanceFilter: "-1,0,1"
+      });
+  
+      calendarContainer.appendChild(script);
+    }
+  
+    // 🔥 MARKET QUOTES
+    const quotesContainer = document.querySelector("#market-quotes .market-chart-inner");
+  
+    if (quotesContainer && !quotesContainer.querySelector("script")) {
+      const script = document.createElement("script");
+      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js";
+      script.async = true;
+  
+      script.innerHTML = JSON.stringify({
+        width: "100%",
+        height: "400",
+        symbolsGroups: [
+          {
+            name: "Indices",
+            symbols: [
+              { name: "FOREXCOM:SPXUSD", displayName: "S&P 500" },
+              { name: "FOREXCOM:NSXUSD", displayName: "NASDAQ 100" }
+            ]
+          },
+          {
+            name: "Forex",
+            symbols: [
+              { name: "FX:EURUSD", displayName: "EUR/USD" },
+              { name: "FX:USDINR", displayName: "USD/INR" }
+            ]
+          }
+        ],
+        showSymbolLogo: true,
+        colorTheme: "light",
+        isTransparent: false,
+        locale: "en"
+      });
+  
+      quotesContainer.appendChild(script);
+    }
+  
+  }, []);
 
   return (
     <>
