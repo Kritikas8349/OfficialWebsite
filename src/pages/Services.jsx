@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Services.css";
 
-
+import { FaMoneyBillWave, FaHandshake, FaUserTie } from "react-icons/fa";
 // const currencies = ["EUR", "USD", "AUD", "GBP", "NZD", "CAD", "CHF", "JPY", "CNY"];
 
 const Services = () => {
@@ -367,7 +367,9 @@ const Services = () => {
                 <div className="wb-container">
 
                     <div className="wb-card">
-                        <div className="icon">💰</div>
+                        <div className="icon">
+                            <FaMoneyBillWave />
+                        </div>
                         <h3>Right Investment</h3>
                         <p>
                             We help you choose the best strategies to maximize your returns
@@ -376,7 +378,9 @@ const Services = () => {
                     </div>
 
                     <div className="wb-card">
-                        <div className="icon">🤝</div>
+                        <div className="icon">
+                            <FaHandshake />
+                        </div>
                         <h3>Personalized Assistance</h3>
                         <p>
                             Get 24/7 expert support with tailored guidance based on your
@@ -385,7 +389,9 @@ const Services = () => {
                     </div>
 
                     <div className="wb-card">
-                        <div className="icon">👨‍💼</div>
+                        <div className="icon">
+                            <FaUserTie />
+                        </div>
                         <h3>Experienced</h3>
                         <p>
                             Backed by 10+ years of industry expertise to deliver reliable
