@@ -553,13 +553,12 @@ const Home = () => {
 
           {/* LEFT CONTENT */}
           <div className={`trade-left ${tradeVisible ? "animate-left" : ""}`}>
-            <h2>Transforming Trading since 2005</h2>
+            <h2>Built for Traders Who Think Ahead</h2>
 
             <p>
-              Transforming trading is more than just a mission statement.
-              It is embedded in everything we do. We build scalable,
-              sustainable and reliable financial technology that always
-              puts the trader first.
+            We’re not just another platform - we’re your edge in the market.
+            With powerful tools, real-time insights, and a future-focused approach, 
+            we help you trade smarter, faster, and with confidence.
             </p>
           </div>
 
@@ -663,7 +662,7 @@ const Home = () => {
           <div className="card1">
             <div className="stars">★★★★★</div>
             <p>
-              "WorkNook makes finding a coworking space so easy! I can book a desk in minutes and get straight to work. Highly recommend!"
+              "As someone new to trading, I was overwhelmed at first. But this platform made everything simple and clear. I’ve learned and grown faster than I expected."
             </p>
             <div className="user">
               <img src="https://randomuser.me/api/portraits/men/32.jpg" />
@@ -677,7 +676,7 @@ const Home = () => {
           <div className="card1">
             <div className="stars">★★★★★</div>
             <p>
-              "Our team needed a flexible meeting space, and WorkNook delivered. The process was smooth, and the space was exactly what we needed!"
+              "The speed, analytics, and reliability are unmatched. It feels like the platform is built for serious traders who want real results."
             </p>
             <div className="user">
               <img src="https://randomuser.me/api/portraits/men/44.jpg" />
@@ -691,7 +690,7 @@ const Home = () => {
           <div className="card1">
             <div className="stars">★★★★★</div>
             <p>
-              "I love the variety of spaces available! Whether I need a quiet spot or a collaborative space, WorkNook always has the perfect option."
+              "I’ve tried multiple platforms, but this one truly stands out. It’s not just about trading - it’s about having confidence in every move you make."
             </p>
             <div className="user">
               <img src="https://randomuser.me/api/portraits/women/65.jpg" />
