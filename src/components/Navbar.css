@@ -235,7 +235,7 @@ body {
   top: 20px;
   right: -100%;
   width: 220px;
-  height: 40vh;
+  height: 42vh;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -533,7 +533,7 @@ body {
   margin-left: 0px   ;
   background-color: #4da6ff;
   border-radius: 25px;
-  margin-top: 20px;
+  margin-top:-20px;
   text-align: center;
   font-weight: 600;
   color: #fff;
