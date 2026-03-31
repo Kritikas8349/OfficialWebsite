@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Services.css";
 
-
+import { FaMoneyBillWave, FaHandshake, FaUserTie } from "react-icons/fa";
 // const currencies = ["EUR", "USD", "AUD", "GBP", "NZD", "CAD", "CHF", "JPY", "CNY"];
 
 const Services = () => {
@@ -82,9 +82,7 @@ const Services = () => {
 
         script.innerHTML = JSON.stringify({
             symbols: [
-                ["Gold", "COMEX:GC1!"],
-                ["Silver", "COMEX:SI1!"],
-                ["Copper", "COMEX:HG1!"]
+                [activeTab, symbolMap[activeTab]]
             ],
             width: "100%",
             height: 500,
@@ -93,7 +91,13 @@ const Services = () => {
         });
 
         comexRef.current.appendChild(script);
-    }, []);
+
+    }, [activeTab]);
+    const symbolMap = {
+        Gold: "OANDA:XAUUSD",
+        Silver: "OANDA:XAGUSD",
+        Copper: "TVC:COPPER" // 👈 yaha change kiya
+    }; // 👈 ye sabse important hai
 
     /* ---------------- COMEX CHART ---------------- */
     useEffect(() => {
@@ -107,7 +111,7 @@ const Services = () => {
 
         script.innerHTML = JSON.stringify({
             autosize: true,
-            symbol: "COMEX:GC1!",
+            symbol: symbolMap[activeTab] || "OANDA:XAUUSD",
             interval: "60",
             timezone: "Asia/Kolkata",
             theme: "light",
@@ -118,7 +122,15 @@ const Services = () => {
         });
 
         comexChartRef.current.appendChild(script);
-    }, []);
+
+        // 👇 cleanup (VERY IMPORTANT)
+        return () => {
+            if (comexChartRef.current) {
+                comexChartRef.current.innerHTML = "";
+            }
+        };
+
+    }, [activeTab]);// 👈 IMPORTANT
 
     return (
         <div>
@@ -271,8 +283,12 @@ const Services = () => {
                 <div className="forex-topbar">
 
                     <div className="forex-tabs">
-                        {["Gold", "Silver", "Copper"].map((tab, i) => (
-                            <button key={i} className={i === 0 ? "active" : ""}>
+                        {["Gold", "Silver", "Copper"].map((tab) => (
+                            <button
+                                key={tab}
+                                className={activeTab === tab ? "active" : ""}
+                                onClick={() => setActiveTab(tab)} // 👈 click handler
+                            >
                                 {tab}
                             </button>
                         ))}
@@ -306,8 +322,12 @@ const Services = () => {
                 <div className="fc-topbar">
 
                     <div className="fc-tabs">
-                        {["Gold", "Silver", "Copper"].map((item, i) => (
-                            <button key={i} className={i === 0 ? "active" : ""}>
+                        {["Gold", "Silver", "Copper"].map((item) => (
+                            <button
+                                key={item}
+                                className={activeTab === item ? "active" : ""}
+                                onClick={() => setActiveTab(item)} // 👈 click handle
+                            >
                                 {item}
                             </button>
                         ))}
@@ -347,7 +367,9 @@ const Services = () => {
                 <div className="wb-container">
 
                     <div className="wb-card">
-                        <div className="icon">💰</div>
+                        <div className="icon">
+                            <FaMoneyBillWave />
+                        </div>
                         <h3>Right Investment</h3>
                         <p>
                             We help you choose the best strategies to maximize your returns
@@ -356,7 +378,9 @@ const Services = () => {
                     </div>
 
                     <div className="wb-card">
-                        <div className="icon">🤝</div>
+                        <div className="icon">
+                            <FaHandshake />
+                        </div>
                         <h3>Personalized Assistance</h3>
                         <p>
                             Get 24/7 expert support with tailored guidance based on your
@@ -365,7 +389,9 @@ const Services = () => {
                     </div>
 
                     <div className="wb-card">
-                        <div className="icon">👨‍💼</div>
+                        <div className="icon">
+                            <FaUserTie />
+                        </div>
                         <h3>Experienced</h3>
                         <p>
                             Backed by 10+ years of industry expertise to deliver reliable

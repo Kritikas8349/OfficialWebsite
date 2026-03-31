@@ -874,3 +874,14 @@ margin-top: -40px;
     font-size: 42px;
   }
 }
+
+.icon {
+    font-size: 34px;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 15px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

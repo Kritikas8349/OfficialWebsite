@@ -15,6 +15,7 @@ body {
   height: auto; /* 🔥 TEMP TEST */
 }
 
+
 /* NAVBAR */
 .navbar {
   position: fixed;
@@ -234,11 +235,11 @@ body {
   top: 10px;
   right: -100%;
   width: 220px;
-  height: 52vh;
+  height: 42vh;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  padding: 60px 25px;
+  padding: 30px 25px;
   gap: 25px;
   transition: right 0.35s ease;
   z-index: 1000;
@@ -257,7 +258,7 @@ body {
 .mobile-menu a {
   color: black;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* MOBILE CTA */
@@ -519,7 +520,7 @@ body {
   .cta-navbar {
     display: none;
   }
-
+  
   .hamburger {
     display: flex;
   }
@@ -532,7 +533,7 @@ body {
   margin-left: 0px   ;
   background-color: #4da6ff;
   border-radius: 25px;
-
+  margin-top:10px;
   text-align: center;
   font-weight: 600;
   color: #fff;
