@@ -171,6 +171,7 @@ margin-top: -40px;
   line-height: 1.6;
   margin-bottom: 30px;
   opacity: 0.85;
+  font-size: 18px;
 }
 
 /* BUTTON */
@@ -218,6 +219,7 @@ margin-top: -40px;
     font-size: 13px;
     margin-top: -10px;
     margin-left: -15px;
+    color: #fff;
   }
 
   .servicesHero {
@@ -884,4 +886,4 @@ margin-top: -40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-}
+} 
