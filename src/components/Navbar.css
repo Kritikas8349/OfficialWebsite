@@ -229,29 +229,39 @@ body {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* MOBILE DRAWER */
 .mobile-menu {
   position: fixed;
-  top: 10px;
+
+  top: 80px;              /* 🔥 navbar ke niche start */
   right: -100%;
-  width: 220px;
-  height: 42vh;
+
+  width: 75%;
+  max-width: 260px;
+
+  height: 50vh;           /* 🔥 EXACT 50% height */
+  
   background-color: #ffffff;
+
   display: flex;
   flex-direction: column;
-  padding: 30px 25px;
-  gap: 25px;
+  justify-content: space-between; /* 🔥 content properly distribute */
+
+  padding: 25px 20px;
+  gap: 18px;
+
   transition: right 0.35s ease;
   z-index: 1000;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
- 
-  
+
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  box-shadow: -8px 10px 30px rgba(0,0,0,0.2); /* 🔥 floating effect */
 }
 
 /* OPEN STATE */
 .mobile-menu.open {
   right: 0;
+  top: 0;
 }
 
 /* LINKS */
