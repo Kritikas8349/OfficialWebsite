@@ -29,13 +29,13 @@ body {
 }
 
 /* Overlay for glass effect */
-.contact-banner .overlay {
+/* .contact-banner .overlay {
   position: absolute;
   inset: 0;
   background: rgba(8, 8, 8, 0.4);
   backdrop-filter: blur(8px);
   z-index: 1;
-}
+} */
 
 /* BIG FADED TEXT */
 .contact-banner .bg-text {
@@ -151,7 +151,7 @@ body {
   border-radius: 30px;
   border: none;
 
-  background: linear-gradient(135deg, #01B4F4, #0D1831);
+  background: #4da6ff;
   color: #fff;
 
   cursor: pointer;
@@ -378,7 +378,7 @@ body {
   border-radius: 20px;
 
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(20px);
+  backdrop-filter: (20px);
 
   border: 1px solid rgba(255,255,255,0.2);
   color: #fff;

@@ -83,6 +83,7 @@
   .research-content {
     max-width: 100%;
     margin-bottom: 120px;
+    text-align: start;
 
   }
 
@@ -97,6 +98,10 @@
   .research-hero {
     min-height: 90vh;
     padding: 0 15px;
+  }
+
+  .research-content{
+    text-align: start;
   }
 
   .research-content h1 {
