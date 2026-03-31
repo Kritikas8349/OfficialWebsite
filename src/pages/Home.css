@@ -20,27 +20,27 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* 🔥 SLOW + PREMIUM SLIDER */
+/* 🔥 SLIDER */
 .slider {
   display: flex;
   width: 100%;
   height: 100%;
   transition: transform 1s ease-in-out;
-  /* slower & smooth */
 }
 
 /* SLIDE */
 .slide {
   position: relative;
-  /* IMPORTANT */
   min-width: 100%;
   height: 100%;
 }
 
-.slide img {
+.slide img,
+.slide picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* 🔥 GRADIENT OVERLAY */
@@ -50,40 +50,49 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-
-  background: radial-gradient(133.13% 233.63% at 58.89% 60.63%,
-      #01B4F4 0%,
-      #0D1831 49.96%,
-      #ffffff 100%);
-
+  background: radial-gradient(
+    133.13% 233.63% at 58.89% 60.63%,
+    #01B4F4 0%,
+    #0D1831 49.96%,
+    #ffffff 100%
+  );
   opacity: 0.6;
-  /* adjust as needed */
   pointer-events: none;
 }
 
-/* OVERLAY */
+/* DARK OVERLAY */
 .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right,
-      rgba(5, 10, 30, 0.9),
-      rgba(5, 10, 30, 0.4),
-      transparent);
+  background: linear-gradient(
+    to right,
+    rgba(5, 10, 30, 0.9),
+    rgba(5, 10, 30, 0.4),
+    transparent
+  );
   top: 0;
   left: 0;
   z-index: 1;
 }
 
-/* CONTENT */
+/* 🔥 HERO CONTENT (FIXED ALIGNMENT) */
 .hero-content {
   position: absolute;
   z-index: 2;
-  max-width: 600px;
-  left: 80px;
+  max-width: 500px;
+
+  left: 8%;
   top: 50%;
   transform: translateY(-50%);
+
   color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px; /* clean spacing */
 }
 
 /* TEXT */
@@ -98,15 +107,17 @@ body {
 }
 
 .hero-content p {
-  margin-top: 20px;
+  margin-top: 8px;
   font-size: 18px;
+  line-height: 1.5;
   color: #d1d5db;
+  max-width: 480px;
 }
 
 /* BUTTON */
 .hero-btn {
-  margin-top: 30px;
-  padding: 12px 28px;
+  margin-top: 18px;
+  padding: 12px 26px;
   border-radius: 30px;
   border: 1px solid white;
   background: transparent;
@@ -120,7 +131,7 @@ body {
   border-color: #4da6ff;
 }
 
-/* ---------------- TEXT ANIMATION (ONLY ONCE) ---------------- */
+/* ---------------- TEXT ANIMATION ---------------- */
 
 .hero-content h1,
 .hero-content p,
@@ -155,8 +166,8 @@ body {
 
 .slider-indicators {
   position: absolute;
-  bottom: 40px;
-  left: 80px;
+  bottom: 50px;
+  left: 8%;
   display: flex;
   gap: 10px;
   z-index: 3;
@@ -170,44 +181,148 @@ body {
   border-radius: 2px;
 }
 
-/* ACTIVE LINE */
 .indicator.active {
   background: #4da6ff;
   width: 60px;
 }
 
-.slide picture,
-.slide img {
-  width: 100%;
-  height: 100%;
-  display: block;
+
+@media (min-width: 1440px) {
+  .hero-content {
+    max-width: 600px;
+    left: 10%;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .slider-indicators {
+    left: 10%;
+  }
 }
 
-.slide picture img {
-  object-fit: cover;
+/* ============================= */
+/* 💻 LAPTOP (1024px - 1439px) */
+/* ============================= */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .hero-content {
+    max-width: 480px;
+    left: 8%;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    max-width: 400px;
+  }
+
+  .slider-indicators {
+    left: 8%;
+  }
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+/* ============================= */
+/* 📱 TABLET (768px - 1023px) */
+/* ============================= */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .hero {
+    height: 90vh; /* slightly shorter */
+  }
+
+  .hero-content {
+    max-width: 450px;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+    line-height: 1.25;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .hero-btn {
+    padding: 10px 22px;
+  }
+
+  .slider-indicators {
+    left: 6%;
+    bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    height: 85vh;
+  }
+
   .hero-content {
     left: 20px;
     right: 20px;
-    margin-top: -80px;
-    padding: 8px;
+    top: 40%;
+    transform: translateY(-50%);
+    max-width: 100%;
   }
 
   .hero-content h1 {
     font-size: 26px;
+    line-height: 1.3;
   }
 
   .hero-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .hero-btn {
+    padding: 10px 20px;
     font-size: 14px;
   }
 
   .slider-indicators {
     left: 20px;
+    bottom: 25px;
+  }
+
+  .indicator {
+    width: 30px;
+    height: 3px;
+  }
+
+  .indicator.active {
+    width: 45px;
   }
 }
+
+/* ============================= */
+/* 📱 EXTRA SMALL (below 480px) */
+/* ============================= */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 22px;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+  }
+
+  .hero-btn {
+    width: fit-content;
+  }
+}
+
 
 
 /*--------About---------*/
@@ -580,10 +695,9 @@ body {
   min-height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
+  justify-content: flex-start; /* ✅ LEFT ALIGN */
+  padding: 60px 6%;
   margin-top: 80px;
-  padding: 0 6%;
 }
 
 /* ================= BACKGROUND ================= */
@@ -591,18 +705,26 @@ body {
 .learn-bg {
   position: absolute;
   inset: 0;
-  margin: 60px;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
   background: url("../assets/mid.png") center/cover no-repeat;
   z-index: 1;
+}
+
+/* 🔥 overlay for better readability */
+.learn-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
 }
 
 /* ================= CONTENT ================= */
 
 .learn-content {
   position: relative;
-  z-index: 3;
-  max-width: 550px;
+  z-index: 2;
+  max-width: 400px;
   width: 100%;
   color: #fff;
   text-align: left;
@@ -610,6 +732,7 @@ body {
   opacity: 0;
   transform: translateY(40px);
   transition: all 1s ease;
+  margin-right: auto;
 }
 
 .learn-content.show {
@@ -620,7 +743,7 @@ body {
 /* ================= TEXT ================= */
 
 .learn-content h2 {
-  font-size: clamp(28px, 5vw, 44px);
+  font-size: clamp(22px, 4vw, 34px);
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 20px;
@@ -657,17 +780,12 @@ body {
 @media (max-width: 1024px) {
 
   .learn-section {
-    justify-content: center; /* center content */
-    padding: 0 20px;
-  }
-
-  .learn-bg {
-    margin: 30px; /* reduce gap */
+    padding: 50px 30px;
   }
 
   .learn-content {
     text-align: center;
-    max-width: 90%;
+    max-width: 600px;
   }
 
 }
@@ -678,16 +796,16 @@ body {
 
   .learn-section {
     min-height: 70vh;
-    margin-top: 50px;
-    padding: 0 15px;
+    padding: 40px 20px;
   }
 
   .learn-bg {
-    margin: 15px;
-    border-radius: 8px;
-
-    /* 🔥 CHANGE IMAGE HERE */
     background: url("../assets/ur7r.png") center/cover no-repeat;
+  }
+
+  .learn-content {
+    max-width: 100%;
+    text-align: center;
   }
 
   .learn-content h2 {
@@ -699,8 +817,8 @@ body {
   }
 
   .learn-btn1 {
-    padding: 8px 18px;
-    font-size: 10px;
+    padding: 10px 20px;
+    font-size: 12px;
   }
 
 }
@@ -713,23 +831,12 @@ body {
     min-height: 65vh;
   }
 
-  .learn-bg {
-    margin: 10px;
-  }
-
-  .learn-content {
-    max-width: 100%;
-    margin-bottom: 100px;
-    padding: 0 30px;
-  }
-
   .learn-content h2 {
     font-size: 22px;
   }
 
   .learn-content p {
     font-size: 13px;
-    margin-bottom: 8px;
   }
 
 }
@@ -747,7 +854,6 @@ body {
   }
 
 }
-
 
 
 
@@ -1036,6 +1142,7 @@ body {
 
   width: 90%;
   max-width: 1600px;
+  overflow: hidden;
 
   padding: 100px 80px;
   border-radius: 6px;
@@ -1053,7 +1160,7 @@ body {
 
 .dna-image {
   position: absolute;
-  left: -200px;
+  left: 0;
 
   width: 100%;
   max-width: 750px;
@@ -1064,7 +1171,7 @@ body {
 }
 
 .dna-image img {
-  width: 100%;
+  width: 80%;
   display: block;
 }
 
@@ -1134,7 +1241,7 @@ body {
 /* 🔥 LARGE LAPTOP (1200px - 1400px) */
 @media (max-width: 1400px) {
   .dna-image {
-    left: -150px;
+    left: 0;
     max-width: 650px;
   }
 
@@ -1150,7 +1257,7 @@ body {
   }
 
   .dna-image {
-    left: -120px;
+    left: 0px;
     max-width: 480px;
   }
 
@@ -1176,7 +1283,7 @@ body {
 
   .dna-image {
     position: relative;
-    left: -80px;
+    left: 0px;
 
     max-width: 500px;
     /* 🔥 increased size */
@@ -1215,7 +1322,7 @@ body {
 
   .dna-image {
     max-width: 380px;
-    width: 130%;
+    width: 100%;
     margin-bottom: 10px;
   }
 
@@ -1723,6 +1830,7 @@ body {
       #0D1831 49.96%,
       #fff 100%);
   border-radius: 6px;
+  overflow: visible;
 
   padding: 100px 80px;
 
@@ -1732,8 +1840,7 @@ body {
 
   position: relative;
 
-  overflow: visible;
-  /* 🔥 IMPORTANT (allow image to go outside) */
+ 
 
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
 }
@@ -1770,7 +1877,7 @@ body {
 .trade-right {
   position: absolute;
 
-  right: -150px;
+  right: 0;
   /* 🔥 MAIN MAGIC (push outside) */
   top: 50%;
   transform: translateY(-50%);
@@ -1785,7 +1892,8 @@ body {
 }
 
 .trade-right img {
-  width: 100%;
+  width: 82%;
+  right: 0;
   display: block;
 }
 
@@ -1808,7 +1916,7 @@ body {
 .trade-right {
   position: absolute;
 
-  right: -150px;
+  right: -120px;
   top: 50%;
   transform: translateY(-50%) translateX(100px);
 
