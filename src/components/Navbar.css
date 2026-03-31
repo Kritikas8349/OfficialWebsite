@@ -255,7 +255,7 @@ body {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 
-  box-shadow: -8px 10px 30px rgba(0,0,0,0.2); /* 🔥 floating effect */
+  box-shadow: -8px 10px 30px rgba(0,0,0,0.2); 
 }
 
 /* OPEN STATE */

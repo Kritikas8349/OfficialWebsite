@@ -262,8 +262,8 @@
           {/* CONTENT */}
           <div className={`hero-content ${animateText ? "animate" : ""}`}>
             <h1>
-              Master the Markets with <br />
-              <span>Capex Smart Insights</span>. <br />
+              Master the Markets with
+              <span> Capex Smart Insights</span>. <br />
               Better Decisions.
             </h1>
 
@@ -303,7 +303,7 @@
             <p className="about-tag">ABOUT US</p>
 
             <h2 className="about-title">
-              Your Partner in Smarter Trading Decisions
+              Your Partner in Smarter <span>Trading Decisions</span>
             </h2>
 
             <p className="about-text">
@@ -335,8 +335,8 @@
 
           <div className={`learn-content ${learnVisible ? "show" : ""}`}>
             <h2>
-              Learn and trade what you <br />
-              want. When you want.
+              Learn and Trade What You <br />
+              Want. When You Want.
             </h2>
 
             <p>
@@ -355,7 +355,7 @@
           ref={serviceRef}
         >
           <div className="section-tag">OUR SERVICES</div>
-          <h2>What can you trade with Capex?</h2>
+          <h2>What Can You <span>Trade With Capex</span>?</h2>
 
           <div className="scroll-wrapper">
 
@@ -448,7 +448,7 @@
 
             {/* RIGHT CONTENT */}
             <div className={`dna-content ${dnaVisible ? "show-right" : ""}`}>
-              <h2>Precision at the core of every trade</h2>
+              <h2>Precision at The Core of Every Trade</h2>
 
               <ul>
                 <li>20+ years of trading experience</li>
@@ -649,10 +649,10 @@
 
           {/* 🔷 HEADING */}
           <div className="heading">
-            <span className="tag">Testimonials</span>
+            <span className="tag">TESTIMONIALS</span>
             <h2>
-              Trusted by creatives and leaders <br />
-              <span>from various industries</span>
+              Trusted by Creatives and Leaders <br />
+              <span>From Various Industries</span>
             </h2>
           </div>
 

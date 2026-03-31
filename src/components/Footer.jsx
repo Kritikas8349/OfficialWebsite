@@ -8,7 +8,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import commodities from "../assets/commodities.jpg"
+import logo1 from "../assets/logo1.png"
 
 
 const Footer = () => {
@@ -24,11 +24,11 @@ const Footer = () => {
           {/* LOGO */}
           <div className="footer__col">
             <div className="footer__logo">
-              <img src={commodities} alt="logo" />
+              <img src={logo1} alt="logo" />
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus.
+            Empowering smarter trading with expert 
+            insights and your financial growth in focus.
             </p>
           </div>
 
@@ -37,9 +37,9 @@ const Footer = () => {
             <h4>Navigation</h4>
             <ul>
               <li>Home</li>
-              <li>Pages</li>
               <li>About Us</li>
               <li>Services</li>
+              <li>Research</li>
             </ul>
           </div>
 
@@ -49,8 +49,8 @@ const Footer = () => {
             <ul>
               <li>Contact Us</li>
               <li>FAQs</li>
-              <li>Booking</li>
-              <li>Pages</li>
+              <li>Research</li>
+              <li>Services</li>
             </ul>
           </div>
 
