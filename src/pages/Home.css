@@ -856,7 +856,7 @@ body {
 /*--------Services-----------*/
 
 .trade-section {
-  padding: 80px 60px;
+  padding: 30px 60px ;
   background: #ffffff;
   text-align: center;
 }
@@ -1800,7 +1800,7 @@ body {
 
 .trade-sec {
   background: #fff;
-  padding: 80px 0;
+  padding: 40px 0;
   display: flex;
   justify-content: center;
 

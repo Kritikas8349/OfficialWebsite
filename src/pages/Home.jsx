@@ -129,7 +129,7 @@
             // 👇 delay after section visible
             setTimeout(() => {
               setProgress(94);
-            }, 1200);
+            }, 1600);
 
             observer.unobserve(entry.target); // run once
           }
@@ -553,13 +553,12 @@
 
             {/* LEFT CONTENT */}
             <div className={`trade-left ${tradeVisible ? "animate-left" : ""}`}>
-              <h2>Transforming Trading since 2005</h2>
+              <h2>Built for Traders Who Think Ahead</h2>
 
               <p>
-                Transforming trading is more than just a mission statement.
-                It is embedded in everything we do. We build scalable,
-                sustainable and reliable financial technology that always
-                puts the trader first.
+              We’re not just another platform - we’re your edge in the market.
+              With powerful tools, real-time insights, and a future-focused approach, 
+              we help you trade smarter, faster, and with confidence.
               </p>
             </div>
 
