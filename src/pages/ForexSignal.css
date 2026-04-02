@@ -547,12 +547,12 @@ body {
     color: #fff;
     border: none;
 
-    box-shadow: 0 0 20px rgba(0, 114, 255, 0.5);
+    /* box-shadow: 0 0 20px rgba(0, 114, 255, 0.5); */
 }
 
 .FX-btn.primary:hover {
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 0 35px rgba(0, 114, 255, 0.8);
+    /* box-shadow: 0 0 35px rgba(0, 114, 255, 0.8); */
 }
 
 /* Secondary Button */
