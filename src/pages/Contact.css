@@ -124,16 +124,17 @@ body {
 /* ================= MOBILE ================= */
 @media (max-width: 480px) {
   .C-contact-banner {
-    height: 100vh;
-    margin-top: 0px;
-    /* 🔥 mobile image */
-    background: url("../assets/contact-bg-phone.png") no-repeat;
-    background-size: cover;
-    background-position: center bottom;
+  height: 100vh;
+  margin-top: 0px;
 
-    align-items: flex-start;
-    padding: 20px;
-  }
+  background: url("../assets/contact-bg-phone.png") no-repeat;
+  background-size: cover;
+
+  /* 🔥 main fix */
+ background-position: 100% bottom;
+  align-items: flex-start;
+  padding: 20px;
+}
 
   .C-content {
     max-width: 100%;
