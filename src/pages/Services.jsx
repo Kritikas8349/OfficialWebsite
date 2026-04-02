@@ -140,7 +140,7 @@ const Services = () => {
                 <div className="overlay"></div>
 
                 <div className="heroContent">
-                    <p className="tag">Our Services</p>
+                   
 
                     <h1>Forex Trading Solutions</h1>
 

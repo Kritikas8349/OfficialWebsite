@@ -27,7 +27,7 @@ const ForexSignal = () => {
             <section className="whyChoose">
 
                 <div className="wc-header">
-                    <h2>Why Choose Us</h2>
+                    <h2>Why  <span>Choose</span> Us</h2>
                     <p>
                         Powerful tools and insights to elevate your trading success.
                     </p>
@@ -83,8 +83,8 @@ const ForexSignal = () => {
             <section className="pricing">
 
                 <div className="pricing-header">
-                    <h2>Choose your Trading Plan</h2>
-                    <p>Start Growing with Professional Forex Signals</p>
+                    <h2>Choose your  <span>Trading Plan</span></h2>
+                    <p>Start growing with professional Forex Signals</p>
                 </div>
 
                 <div className="pricing-container">

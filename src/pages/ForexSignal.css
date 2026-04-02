@@ -152,15 +152,18 @@ body {
 
 /* ===== HEADER ===== */
 .wc-header h2 {
-    font-size: 46px;
-    font-weight: 700;
+    font-size: 48px;
+    font-weight: 600;
     color: #0f172a;
+}
+.wc-header span{
+    color: #4da6ff;
 }
 
 .wc-header p {
     margin-top: 10px;
-    color: #64748b;
-    font-size: 16px;
+    color: #000000;
+    font-size: 18px;
 }
 
 /* ===== GRID ===== */
@@ -180,7 +183,7 @@ body {
     padding: 25px;
     border-radius: 18px;
 
-    background: linear-gradient(145deg, #ffffff, #eef3ff);
+    background:#fff;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
     text-align: left;
@@ -282,14 +285,19 @@ body {
 
 /* ===== HEADER ===== */
 .pricing-header h2 {
-    font-size: 46px;
-    font-weight: 700;
+    font-size: 48px;
+    font-weight: 600;
     color: #0f172a;
 }
 
+.pricing-header span{
+    color: #4da6ff;
+} 
+
 .pricing-header p {
     margin-top: 10px;
-    color: #475569;
+    font-size: 18px;
+    color: #000000;
 }
 
 /* ===== GRID ===== */
@@ -351,12 +359,12 @@ body {
 .badge {
     position: absolute;
     top: -1px;
-    right: 5px;
-    background: #fff;
-    color: #0f172a;
+    right: 0px;
+    background: #4da6ff;
+    color: #fff;
     padding: 5px 12px;
     font-size: 12px;
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
     font-weight: 600;
 }
 

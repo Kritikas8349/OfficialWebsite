@@ -459,9 +459,9 @@ margin-top: -40px;
   margin: 50px auto;
   max-width: 1400px;
 
-  box-shadow:
+  /* box-shadow:
     0 25px 60px rgba(37, 99, 235, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    inset 0 1px 0 rgba(255, 255, 255, 0.15); */
 }
 
 /* HEADER */
@@ -698,7 +698,7 @@ margin-top: -40px;
 
 /* HEADER */
 .wb-header h2 {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 700;
   color: #fff;
 }
@@ -769,10 +769,10 @@ margin-top: -40px;
 }
 
 .wb-header h2 {
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: 600;
 
-  background: linear-gradient(90deg, #ffffff, #01B4F4);
+  background: #ffffff;
 
   -webkit-background-clip: text;
   background-clip: text;
