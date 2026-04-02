@@ -638,13 +638,7 @@ body {
   z-index: 1;
 }
 
-/* 🔥 overlay for better readability */
-.learn-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-}
+
 
 /* ================= CONTENT ================= */
 
