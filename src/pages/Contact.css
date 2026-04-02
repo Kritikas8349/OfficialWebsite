@@ -10,56 +10,178 @@ body {
   height: 100%;
 }
 
+
+
 /* MAIN SECTION */
-.contact-banner {
-  position: relative;
-  height: 350px;
+/* ===== BASE (DESKTOP FIRST) ===== */
+.C-contact-banner {
+  width: 100%;
+  height: 70vh;
+  min-height: 450px;
+  margin-top: -150px;
+  background: url("../assets/contact-bg.png") no-repeat;
+  background-size: cover;
+  background-position: right center;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(
-    133.13% 233.63% at 58.89% 60.63%,
-    #01B4F4 0%,
-    #0D1831 49.96%,
-    #ffffff 100%
-  );
-  
+  justify-content: flex-start;
+
+  padding: 0 5%;
+  font-family: Poppins, "sans-sanrif";
 }
 
-/* Overlay for glass effect */
-/* .contact-banner .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(8, 8, 8, 0.4);
-  backdrop-filter: blur(8px);
-  z-index: 1;
-} */
-
-/* BIG FADED TEXT */
-.contact-banner .bg-text {
-  position: absolute;
-  font-size: 190px;
-  font-weight: 900;
-  color: rgba(249, 246, 246, 0.06); /* very light */
-  letter-spacing: 4px;
-  z-index: 1;
-  user-select: none;
-  word-spacing: 30px;
+/* Content */
+.C-content {
+  margin-top: 170px;
+  max-width: 600px;
+  color: #fff;
 }
 
-/* Main content */
-.contact-banner .content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
+/* Heading */
+.C-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
 }
 
-.contact-banner .content h2 {
-  font-size: 42px;
-  color: #ffffff;
-  font-weight: 600;
+.C-content h1 span {
+  color: #00c6ff;
+}
+
+/* Subtitle */
+.C-subtitle {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.C-subtitle span {
+  color: #00c6ff;
+}
+
+/* Description */
+.C-desc {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* Features */
+.C-features {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.C-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  padding: 12px 15px;
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(7px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Icon */
+.C-icon {
+  font-size: 1.5rem;
+  color: #00c6ff;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+  .C-contact-banner {
+    height: 60vh;
+    background-position: 75% center;
+  }
+
+  .C-content {
+    max-width: 500px;
+  }
+}
+
+/* ================= SMALL TABLET ================= */
+@media (max-width: 768px) {
+  .C-contact-banner {
+    height: 55vh;
+    background-position: 80% center;
+  }
+
+  .C-features {
+    gap: 10px;
+  }
+
+  .C-card {
+    padding: 10px 12px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .C-contact-banner {
+    height: 100vh;
+    margin-top: 0px;
+    /* 🔥 mobile image */
+    background: url("../assets/contact-bg-phone.png") no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .C-content {
+    max-width: 100%;
+    margin-top: 60px;
+  }
+
+  .C-content h1 {
+    font-size: 2rem;
+  }
+
+  .C-subtitle {
+    font-size: .9rem;
+  }
+
+  .C-desc {
+    font-size: 0.8rem;
+  }
+
+  .C-features {
+    flex-direction: column;
+  }
+
+  .C-card {
+    width: 55%;
+    font-size: 12px;
+  }
+}
+
+/* ================= EXTRA SMALL ================= */
+@media (max-width: 360px) {
+  .C-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .C-desc {
+    font-size: 0.75rem;
+  }
+}
+
+/* ================= LARGE SCREENS ================= */
+@media (min-width: 1400px) {
+  .C-contact-banner {
+    height: 80vh;
+  }
+
+  .C-content {
+    max-width: 700px;
+  }
 }
 
 /*--------------------------------------- Card---------------------------- */
