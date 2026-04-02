@@ -953,6 +953,7 @@ body {
 
 @media (max-width: 768px) {
   .trade-section {
+    margin-top: 60px;
     padding: 60px 20px;
   }
 
@@ -1258,6 +1259,9 @@ body {
     width: 100%;
   }
 
+  .dna-content{
+    text-align: start;
+  }
   .dna-content h2 {
     font-size: 22px;
   }
@@ -2350,7 +2354,7 @@ body {
 @media (max-width: 1024px) {
 
   .heading h2 {
-    font-size: 40px;
+    font-size: 22px;
   }
 
   .testimonial-cards1 {
