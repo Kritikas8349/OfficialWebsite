@@ -125,13 +125,13 @@ body {
 @media (max-width: 480px) {
   .C-contact-banner {
   height: 100vh;
-  margin-top: 0px;
+  margin-top: 0;
 
   background: url("../assets/contact-bg-phone.png") no-repeat;
-  background-size: cover;
 
-  /* 🔥 main fix */
- background-position: 100% bottom;
+  /* 🔥 main control */
+  background-size: 140% 100%;   /* width increase karke left cut hoga */
+  background-position: right bottom; /* image right side shift hogi */
   align-items: flex-start;
   padding: 20px;
 }
@@ -142,15 +142,15 @@ body {
   }
 
   .C-content h1 {
-    font-size: 2rem;
+    font-size: 36px;
   }
 
   .C-subtitle {
-    font-size: .9rem;
+    font-size: 14px;
   }
 
   .C-desc {
-    font-size: 0.8rem;
+    font-size: 13px;
   }
 
   .C-features {
