@@ -49,6 +49,10 @@ body {
 
 }
 
+.fs-content span{
+    color: #4da6ff;
+}
+
 /* ===== TEXT ===== */
 .fs-content p {
     margin-top: 20px;
@@ -145,7 +149,7 @@ body {
 .whyChoose {
     margin-top: -30px;
     padding: 80px 8%;
-    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+    background: #ffffff;
     text-align: center;
     font-family: Poppins, "sans-sarif";
 }

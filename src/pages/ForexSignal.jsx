@@ -13,7 +13,7 @@ const ForexSignal = () => {
                 <div className="fs-content">
                     <h1>
                         Turn Market Moves into
-                        Profitable  <br />
+                        <span> Profitable  <br /> Trades</span> 
                     </h1>
 
                     <p>
