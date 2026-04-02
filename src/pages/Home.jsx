@@ -263,8 +263,7 @@
           <div className={`hero-content ${animateText ? "animate" : ""}`}>
             <h1>
               Master the Markets with
-              <span> Capex Smart Insights</span>. <br />
-              Better Decisions.
+              <span> Capex Smart Insights.</span> <br />
             </h1>
 
             <p>

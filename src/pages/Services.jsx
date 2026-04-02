@@ -140,26 +140,25 @@ const Services = () => {
                 <div className="overlay"></div>
 
                 <div className="heroContent">
-                   
 
-                    <h1>Forex Trading Solutions</h1>
+                    <h1 className="anim delay1">Forex Trading Solutions</h1>
 
-                    <p className="desc">
+                    <p className="desc anim delay2">
                         Explore powerful forex services designed for modern traders.
                         Trade smarter with real-time insights and automation.
                     </p>
 
                     <div className="servicesList">
-                        <span>✔ Live Market Analysis</span>
-                        <span>✔ Copy Trading</span>
-                        <span>✔ Forex Signals</span>
-                        <span>✔ Risk Management</span>
-                        <span>✔ Trading Bots</span>
-                        <span>✔ Portfolio Tracking</span>
+                        <span className="anim delay3">✔ Live Market Analysis</span>
+                        <span className="anim delay4">✔ Copy Trading</span>
+                        <span className="anim delay5">✔ Forex Signals</span>
+                        <span className="anim delay6">✔ Risk Management</span>
+                        <span className="anim delay7">✔ Trading Bots</span>
+                        <span className="anim delay8">✔ Portfolio Tracking</span>
                     </div>
 
                     <button
-                        className="ctaBtn"
+                        className="ctaBtn anim delay9"
                         onClick={() => {
                             document.querySelector(".forex-section")
                                 ?.scrollIntoView({ behavior: "smooth" });
@@ -167,6 +166,7 @@ const Services = () => {
                     >
                         Explore Heatmap
                     </button>
+
                 </div>
             </section>
 
