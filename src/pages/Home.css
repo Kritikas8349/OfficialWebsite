@@ -95,7 +95,7 @@ body {
 
 .hero-content p {
   font-size: clamp(14px, 1.5vw, 17px);
-  color: #d1d5db;
+  color: #fff;
   max-width: 480px;
   text-align: left;
 }
@@ -722,12 +722,14 @@ body {
   }
 
   .learn-bg {
+    height: 8C-card0vh;
     background: url("../assets/ur7r.png") center/cover no-repeat;
   }
 
   .learn-content {
     max-width: 100%;
     text-align: center;
+    margin-bottom: 120px;
   }
 
   .learn-content h2 {
@@ -2092,6 +2094,10 @@ body {
 
   .faq-left h2 {
     font-size: 26px;
+  }
+
+  .faq-left p{
+    font-size: 16px;
   }
 
   .faq-question {

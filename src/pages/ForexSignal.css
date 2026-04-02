@@ -511,8 +511,14 @@ body {
 /* Gradient Highlight */
 .FX-content h1 span {
     background: linear-gradient(90deg, #00c6ff, #0072ff);
+    
     -webkit-background-clip: text;
+    background-clip: text; 
+    
     -webkit-text-fill-color: transparent;
+    color: transparent; 
+
+    display: inline-block; 
 
     text-shadow: 0 0 20px rgba(0, 198, 255, 0.4);
 }
@@ -543,16 +549,14 @@ body {
 
 /* Primary Button (Glow Effect) */
 .FX-btn.primary {
-    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    background: #4da6ff;
     color: #fff;
     border: none;
-
-    /* box-shadow: 0 0 20px rgba(0, 114, 255, 0.5); */
 }
 
 .FX-btn.primary:hover {
-    transform: translateY(-4px) scale(1.05);
-    /* box-shadow: 0 0 35px rgba(0, 114, 255, 0.8); */
+    background-color: #0072ff;
+   
 }
 
 /* Secondary Button */

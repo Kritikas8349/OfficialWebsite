@@ -1,6 +1,6 @@
 import React from "react";
 import "./ForexSignal.css";
-import heroImg from "../assets/FX-image.png";
+import heroImg from "../assets/FXImg.png";
 
 import { FaChartLine, FaUserTie, FaBell, FaTrophy } from "react-icons/fa";
 
@@ -80,6 +80,31 @@ const ForexSignal = () => {
 
             </section>
 
+
+
+
+
+            {/*------------------------------------ FX-container----------------------- */}
+
+            <div className="FX-container">
+                <img src={heroImg} alt="trading" className="FX-image" />
+
+                <div className="FX-content">
+                    <h1>
+                        Turn Signals Into <span>Profit </span>
+                    </h1>
+                    <p>Trusted by 10,000+ Traders | +70 to +300 Pips Daily</p>
+
+                    <div className="FX-buttons">
+                        <button className="FX-btn primary">Get Signals</button>
+                        <button className="FX-btn secondary">View Performance</button>
+                    </div>
+                </div>
+            </div>
+
+
+            
+
             {/*------------------------------------- pricing --------------------------*/}
             <section className="pricing">
 
@@ -150,23 +175,31 @@ const ForexSignal = () => {
 
             </section>
 
-            {/*------------------------------------ FX-container----------------------- */}
 
-            <div className="FX-container">
-                <img src={heroImg} alt="trading" className="FX-image" />
 
-                <div className="FX-content">
-                    <h1>
-                        Turn Signals Into <span>Profit </span>
-                    </h1>
-                    <p>Trusted by 10,000+ Traders | +70 to +300 Pips Daily</p>
+            {/*------------------------------------- cta research --------------------------*/}
+            <section className="ctaresearch-section">
 
-                    <div className="FX-buttons">
-                        <button className="FX-btn primary">Get Signals</button>
-                        <button className="FX-btn secondary">View Performance</button>
-                    </div>
-                </div>
-            </div>
+        <div className="ctaresearch-container">
+
+          <h2 className="ctaresearch-title">
+            Start Trading with <span>Expert Signal</span>
+          </h2>
+
+          <p className="ctaresearch-subtitle">
+            Join 50,000+ traders who receive professional market analysis and high-probability trading setups every day
+          </p>
+
+          <div className="ctaresearch-buttons">
+            <button className="ctaresearch-btn primary">Get Premium Signals</button>
+            <button className="ctaresearch-btn secondary">Join Community</button>
+          </div>
+
+        </div>
+
+      </section>
+
+            
 
         </div>
     );
