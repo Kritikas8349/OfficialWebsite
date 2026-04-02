@@ -236,24 +236,23 @@ body {
 
 .mobile-menu {
   position: fixed;
-
-  top: 80px;              /* 🔥 navbar ke niche start */
+  top: 80px;
   right: -100%;
 
-  width: 75%;
-  max-width: 260px;
+  width: 65%;
+  max-width: 230px;
+  height: 50vh;
 
-  height: 50vh;           /* 🔥 EXACT 50% height */
-  
-  background-color: #ffffff;
+  background-color: white;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 🔥 content properly distribute */
 
-  padding: 25px 20px;
-  gap: 18px;
+  justify-content: flex-start;  /* 🔥 FIX */
+  gap: 10px;                     /* spacing control */
 
+  padding: 50px 20px;
+  
   transition: right 0.35s ease;
   z-index: 1000;
 
@@ -263,10 +262,16 @@ body {
   box-shadow: -8px 10px 30px rgba(0,0,0,0.2); 
 }
 
+.mobile-menu a {
+  margin: 0;
+  padding: 6px 0;
+  font-size: 15px;
+}
+
 /* OPEN STATE */
 .mobile-menu.open {
   right: 0;
-  top: 0;
+  top: 10px;
 }
 
 /* LINKS */
