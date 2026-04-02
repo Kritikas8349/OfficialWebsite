@@ -1,5 +1,6 @@
 import React from "react";
 import "./ForexSignal.css";
+import heroImg from "../assets/FX-image.png";
 
 import { FaChartLine, FaUserTie, FaBell, FaTrophy } from "react-icons/fa";
 
@@ -148,6 +149,24 @@ const ForexSignal = () => {
                 </div>
 
             </section>
+
+            {/*------------------------------------ FX-container----------------------- */}
+
+            <div className="FX-container">
+                <img src={heroImg} alt="trading" className="FX-image" />
+
+                <div className="FX-content">
+                    <h1>
+                        Turn Signals Into <span>Profit </span>
+                    </h1>
+                    <p>Trusted by 10,000+ Traders | +70 to +300 Pips Daily</p>
+
+                    <div className="FX-buttons">
+                        <button className="FX-btn primary">Get Signals</button>
+                        <button className="FX-btn secondary">View Performance</button>
+                    </div>
+                </div>
+            </div>
 
         </div>
     );
