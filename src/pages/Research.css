@@ -22,8 +22,9 @@
 
 /* TEXT */
 .research-content h1 {
-  font-size: clamp(28px, 5vw, 52px);  /* 🔥 responsive text */
+  font-size: clamp(28px, 5vw, 60px);  
   line-height: 1.2;
+  font-weight: 900;
 }
 
 .research-content p {
