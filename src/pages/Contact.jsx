@@ -7,6 +7,9 @@ import {
   FaTwitter,
   FaWhatsapp
 } from "react-icons/fa";
+import { FaHeadset } from "react-icons/fa";
+import { IoFlash } from "react-icons/io5";
+import { MdVerified } from "react-icons/md";
 
 import { FiPhone, FiMail } from "react-icons/fi";
 
@@ -79,16 +82,50 @@ const Contact = () => {
   return (
     <div>
 
-      {/* BANNER */}
-      <section className="contact-banner">
-        <div className="overlay"></div>
+      {/*-------------------------------- BANNER--------------------------------- */}
+      <section className="C-contact-banner">
+        <div className="C-content">
+          <h1>
+            CONTACT <span>US</span>
+          </h1>
 
-        {/* BIG BACKGROUND TEXT */}
-        <h1 className="bg-text">CONTACT US</h1>
+          <p className="C-subtitle">
+            We’re Here to <span>Help You</span>
+          </p>
 
+          <p className="C-desc">
+            Have questions, feedback, or need support?
+            Our team is ready to assist you — anytime, anywhere.
+          </p>
+
+          <div className="C-features">
+            <div className="C-card">
+              <FaHeadset className="C-icon" />
+              <div>
+                <h4>24/7 Support</h4>
+                <p>Always Available</p>
+              </div>
+            </div>
+
+            <div className="C-card">
+              <IoFlash className="C-icon" />
+              <div>
+                <h4>Quick Response</h4>
+                <p>We Reply Fast</p>
+              </div>
+            </div>
+
+            <div className="C-card">
+              <MdVerified className="C-icon" />
+              <div>
+                <h4>Trusted Service</h4>
+                <p>Secure & Reliable</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-
-      {/* FORM SECTION */}
+      {/* ------------------------------FORM SECTION------------------------------ */}
       <section className="contact-section">
         <div className="contact-container">
 
