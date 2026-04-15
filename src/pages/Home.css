@@ -953,7 +953,7 @@ body {
 
 @media (max-width: 768px) {
   .trade-section {
-    margin-top: 70px;
+    margin-top: 120px;
     padding: 60px 20px;
   }
 
@@ -1682,7 +1682,7 @@ body {
 /* SMALL MOBILE */
 @media (max-width: 480px) {
   .why-header h2 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .why-header p {
@@ -2079,6 +2079,7 @@ body {
 @media (max-width: 900px) {
   .faq-container {
     flex-direction: column;
+    gap: 20px;
   }
 
   .faq-left,
@@ -2093,11 +2094,24 @@ body {
 
 @media (max-width: 600px) {
   .faq-section {
-    padding: 60px 20px;
+    padding: 30px 20px;
+  }
+
+  .faq-tag {
+    display: inline-flex;   /* 🔥 main fix */
+    justify-content: center;
+    align-items: center;
+  
+    padding: 8px 20px;      /* size control */
+    border-radius: 30px;
+  
+    width: fit-content;     /* 🔥 important */
+    margin: 0  0 40px 140px;         /* center align */
   }
 
   .faq-left h2 {
     font-size: 26px;
+    text-align: center;
   }
 
   .faq-left p{
