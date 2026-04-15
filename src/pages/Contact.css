@@ -77,7 +77,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
+  font-size: 12px;
   padding: 12px 15px;
   border-radius: 15px;
 
@@ -124,16 +124,17 @@ body {
 /* ================= MOBILE ================= */
 @media (max-width: 480px) {
   .C-contact-banner {
-    height: 100vh;
-    margin-top: 0px;
-    /* 🔥 mobile image */
-    background: url("../assets/contact-bg-phone.png") no-repeat;
-    background-size: cover;
-    background-position: center bottom;
+  height: 100vh;
+  margin-top: 0;
 
-    align-items: flex-start;
-    padding: 20px;
-  }
+  background: url("../assets/contact-bg-phone.png") no-repeat;
+
+  /* 🔥 main control */
+  background-size: 140% 100%;   /* width increase karke left cut hoga */
+  background-position: right bottom; /* image right side shift hogi */
+  align-items: flex-start;
+  padding: 20px;
+}
 
   .C-content {
     max-width: 100%;
@@ -141,15 +142,15 @@ body {
   }
 
   .C-content h1 {
-    font-size: 2rem;
+    font-size: 36px;
   }
 
   .C-subtitle {
-    font-size: .9rem;
+    font-size: 14px;
   }
 
   .C-desc {
-    font-size: 0.8rem;
+    font-size: 13px;
   }
 
   .C-features {

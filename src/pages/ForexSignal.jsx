@@ -1,6 +1,6 @@
 import React from "react";
 import "./ForexSignal.css";
-import heroImg from "../assets/FXImg.png";
+import heroImg from "../assets/FxImg.png";
 
 import { FaChartLine, FaUserTie, FaBell, FaTrophy } from "react-icons/fa";
 

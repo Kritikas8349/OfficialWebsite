@@ -20,7 +20,7 @@ body {
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
-margin-top: -40px;
+  margin-top: -40px;
   display: flex;
   align-items: center;
   padding: 0 8%;
@@ -48,6 +48,58 @@ margin-top: -40px;
   opacity: 0;
   transform: translateY(20px);
   animation: softFade 1s ease forwards;
+}
+
+/* Base animation */
+.anim {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Keyframe */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔥 Stagger delays (sequence) */
+.delay1 {
+  animation-delay: 0.2s;
+}
+
+.delay2 {
+  animation-delay: 0.4s;
+}
+
+.delay3 {
+  animation-delay: 0.6s;
+}
+
+.delay4 {
+  animation-delay: 0.8s;
+}
+
+.delay5 {
+  animation-delay: 1s;
+}
+
+.delay6 {
+  animation-delay: 1.2s;
+}
+
+.delay7 {
+  animation-delay: 1.4s;
+}
+
+.delay8 {
+  animation-delay: 1.6s;
+}
+
+.delay9 {
+  animation-delay: 1.8s;
 }
 
 @keyframes softFade {
@@ -199,9 +251,11 @@ margin-top: -40px;
     background-position: center;
     padding: 40px 20px;
   }
-.tag{
-  display: none;
-}
+
+  .tag {
+    display: none;
+  }
+
   .heroContent {
     margin-bottom: 120px;
   }
@@ -1018,12 +1072,12 @@ margin-top: -40px;
 }
 
 .icon {
-    font-size: 34px;
-    color: #2563eb;
-    background: #eff6ff;
-    padding: 15px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-} 
+  font-size: 34px;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

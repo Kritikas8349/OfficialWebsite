@@ -638,6 +638,7 @@ body {
   z-index: 1;
 }
 
+/* 🔥 overlay for better readability */
 
 
 /* ================= CONTENT ================= */
@@ -721,6 +722,7 @@ body {
   }
 
   .learn-bg {
+    height: 80vh;
     background: url("../assets/ur7r.png") center/cover no-repeat;
   }
 
@@ -951,6 +953,7 @@ body {
 
 @media (max-width: 768px) {
   .trade-section {
+    margin-top: 70px;
     padding: 60px 20px;
   }
 
@@ -1256,6 +1259,9 @@ body {
     width: 100%;
   }
 
+  .dna-content{
+    text-align: start;
+  }
   .dna-content h2 {
     font-size: 22px;
   }
@@ -2348,7 +2354,7 @@ body {
 @media (max-width: 1024px) {
 
   .heading h2 {
-    font-size: 40px;
+    font-size: 22px;
   }
 
   .testimonial-cards1 {
