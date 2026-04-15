@@ -241,7 +241,7 @@ body {
 
   width: 56%;
   max-width: 230px;
-  height: 50vh;
+  /* height: 50vh; */
 
   background-color: white;
 
@@ -530,7 +530,7 @@ body {
     opacity: 1;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .nav-center {
     display: none;
   }
@@ -562,32 +562,16 @@ body {
 }
 
 
-@media (max-width: 1024px) and (min-width: 768px) {
+@media (max-width: 1024px) and (min-width: 900px) {
   
-  .navbar {
-    padding: 0 30px; /* reduce spacing */
-  }
+  
 
   .logo img {
     height: 50px; /* slightly smaller */
   }
 
-  .nav-center {
-    gap: 28px; /* reduce gap */
-  }
-
   .nav-center a {
-    font-size: 14px; /* prevent wrapping */
-    white-space: nowrap; /* IMPORTANT */
-  }
-
-  .cta-navbar {
-    padding: 8px 18px;
-    font-size: 13px;
-  }
-
-  .nav-center a {
-    white-space: nowrap;
-  }
+  white-space: nowrap;
+}
 
 }
