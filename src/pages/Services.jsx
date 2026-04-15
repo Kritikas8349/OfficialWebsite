@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import "./Services.css";
 
 import { FaMoneyBillWave, FaHandshake, FaUserTie } from "react-icons/fa";
+import { FaChartLine, FaCoins, FaChartBar } from "react-icons/fa";
+import { MdCurrencyExchange } from "react-icons/md";
 // const currencies = ["EUR", "USD", "AUD", "GBP", "NZD", "CAD", "CHF", "JPY", "CNY"];
 
 const Services = () => {
@@ -132,6 +134,29 @@ const Services = () => {
 
     }, [activeTab]);// 👈 IMPORTANT
 
+    const newservices = [
+        {
+            title: "Forex Trading",
+            desc: "Trade major, minor & exotic currency pairs with real-time insights and precision tools.",
+            icon: <MdCurrencyExchange />,
+        },
+        {
+            title: "Comex Trading",
+            desc: "Invest in Gold, Silver & other commodities with fast and secure execution.",
+            icon: <FaCoins />,
+        },
+        {
+            title: "Market Analysis",
+            desc: "Advanced technical and fundamental analysis to guide your trading strategies.",
+            icon: <FaChartBar />,
+        },
+        {
+            title: "Portfolio Management",
+            desc: "Smart portfolio strategies to maximize returns and minimize risks.",
+            icon: <FaChartLine />,
+        },
+    ];
+
     return (
         <div>
 
@@ -140,7 +165,7 @@ const Services = () => {
                 <div className="overlay"></div>
 
                 <div className="heroContent">
-                   
+
 
                     <h1>Forex Trading Solutions</h1>
 
@@ -167,6 +192,38 @@ const Services = () => {
                     >
                         Explore Heatmap
                     </button>
+                </div>
+            </section>
+
+            {/*--------------------------------- OUR SERVICES    ------------------------------------*/}
+
+            <section className="capex__newservices">
+                <div className="capex__newservices-container">
+
+                    {/* Header */}
+                    <div className="capex__newservices-header">
+                        <span className="tag">OUR SERVICES</span>
+                        <h2>
+                            Trade Smarter with <span>Capex</span>
+                        </h2>
+                        <p>
+                            We provide expert Forex & Comex trading services with precision,
+                            analytics, and high-performance execution.
+                        </p>
+                    </div>
+
+                    {/* Cards */}
+                    <div className="capex__newservices-grid">
+                        {newservices.map((item, index) => (
+                            <div className="service-card" key={index}>
+                                <div className="icon">{item.icon}</div>
+                                <h3>{item.title}</h3>
+                                <p>{item.desc}</p>
+                                <button className="service-btn">Learn More</button>
+                            </div>
+                        ))}
+                    </div>
+
                 </div>
             </section>
 
