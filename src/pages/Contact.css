@@ -16,7 +16,7 @@ body {
 /* ===== BASE (DESKTOP FIRST) ===== */
 .C-contact-banner {
   width: 100%;
-  height: 70vh;
+  height: 100vh;
   min-height: 450px;
   margin-top: -150px;
   background: url("../assets/contact-bg.png") no-repeat;
@@ -89,27 +89,49 @@ body {
 
 /* Icon */
 .C-icon {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #00c6ff;
 }
 
 /* ================= TABLET ================= */
 @media (max-width: 992px) {
   .C-contact-banner {
-    height: 60vh;
+    height: 100vh;
     background-position: 75% center;
   }
 
   .C-content {
-    max-width: 500px;
+    max-width: 400px;
   }
+
+  .C-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+
+
+  .C-desc {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    max-width: 380px;
+}
+  
 }
 
 /* ================= SMALL TABLET ================= */
 @media (max-width: 768px) {
   .C-contact-banner {
-    height: 55vh;
-    background-position: 80% center;
+    height: 100vh;
+    margin-top: 0;
+  
+    background: url("../assets/contact-bg-phone.png") no-repeat;
+  
+    /* 🔥 main control */
+    background-size: 140% 100%;   /* width increase karke left cut hoga */
+    background-position: right bottom; /* image right side shift hogi */
+    align-items: flex-start;
+    padding: 20px;
   }
 
   .C-features {
@@ -118,6 +140,11 @@ body {
 
   .C-card {
     padding: 10px 12px;
+  }
+
+  .C-content {
+    max-width: 500px;
+    margin-top: 60px;
   }
 }
 
@@ -177,7 +204,7 @@ body {
 /* ================= LARGE SCREENS ================= */
 @media (min-width: 1400px) {
   .C-contact-banner {
-    height: 80vh;
+    height: 100vh;
   }
 
   .C-content {
@@ -357,9 +384,8 @@ body {
   transform: scale(1.2);
   color: #fff;
 }
-/* ============================= */
-/* 📱 MOBILE (<= 768px) */
-/* ============================= */
+
+
 @media (max-width: 768px) {
 
   .contact-container {

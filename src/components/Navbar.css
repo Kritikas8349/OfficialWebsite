@@ -560,3 +560,34 @@ body {
 
   display: block; /* important */
 }
+
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  
+  .navbar {
+    padding: 0 30px; /* reduce spacing */
+  }
+
+  .logo img {
+    height: 50px; /* slightly smaller */
+  }
+
+  .nav-center {
+    gap: 28px; /* reduce gap */
+  }
+
+  .nav-center a {
+    font-size: 14px; /* prevent wrapping */
+    white-space: nowrap; /* IMPORTANT */
+  }
+
+  .cta-navbar {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
+  .nav-center a {
+    white-space: nowrap;
+  }
+
+}
